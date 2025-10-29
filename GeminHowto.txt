@@ -409,4 +409,4 @@ While the `google_search` tool is recommended for Gemini 2.0 and later, Gemini 1
 
 - Try the [Grounding with Google Search in the Gemini API Cookbook](https://colab.research.google.com/github/google-gemini/cookbook/blob/main/quickstarts/Search_Grounding.ipynb).
 - Learn about other available tools, like [Function Calling](https://ai.google.dev/gemini-api/docs/function-calling).
-- Learn how to augment prompts with specific URLs using the [URL context tool](https://ai.google.dev/gemini-api/docs/url-context).
+- Learn how to augment prompts with specific URLs using the [URL context tool](https://ai.google.dev/gemini-api/docs/url-context).                                              

@@ -124,8 +124,8 @@ export const Chat = () => {
     const useSearch = shouldUseSearch(q);
     const identity = `You are the chatbot for Meloy Kickstart — the engineering entrepreneurship club at Texas A&M University, which is a subset of the Meloy program.`;
     const sys = useSearch
-      ? `${identity} Prefer the provided Context, but you MAY use Google Search for date-specific or real-time details. Include links when possible. Keep answers concise. If unsure, say so and suggest joining our Discord (${DISCORD}).`
-      : `${identity} Answer ONLY using the provided Context. If the answer is not clearly present in the Context, say you’re not sure and suggest joining our Discord (${DISCORD}). Keep answers concise, include relevant program names and links from the Context.`;
+      ? `${identity} Prefer the provided Context, but you MAY use Google Search for date-specific or real-time details. Include links when possible. Keep answers concise. If the answer is present in Context, answer directly and avoid hedging like “I'm not sure.” If it’s truly not present, say so briefly and suggest joining our Discord (${DISCORD}).`
+      : `${identity} Answer ONLY using the provided Context. When the answer exists in Context, answer confidently and directly and avoid hedging like “I'm not sure.” If it’s truly not in Context, say so briefly and suggest joining our Discord (${DISCORD}). Keep answers concise and include specific program names and links from Context.`;
 
     const prompt = [
       `System:\n${sys}`,
@@ -139,7 +139,7 @@ export const Chat = () => {
       const resp = await fetch("/api/gemini-chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ prompt, useSearch }),
+        body: JSON.stringify({ prompt, useSearch, useRag: true, question: q }),
       });
       const data = await resp.json();
       if (!resp.ok) throw new Error(data?.error || "Request failed");

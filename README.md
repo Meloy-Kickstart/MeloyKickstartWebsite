@@ -68,3 +68,33 @@ Data captured:
 - source_section (e.g. "career_fair")
 
 Security: RLS allows anonymous inserts only; there is no public select/update/delete access. Never put the service role key in client apps.
+
+## Optional: Enable RAG for better answers
+
+Build a small, local vector index of `TAMUStartup.txt` so the chatbot can answer more confidently from your content.
+
+1) Create embeddings (one-time; requires `GEMINI_API_KEY`):
+
+```powershell
+$env:GEMINI_API_KEY = "<your_api_key>"
+npm run rag:build
+```
+
+This generates `rag/tamu-embeddings.json`.
+
+2) Commit the file so it's available in production:
+
+```powershell
+git add rag/tamu-embeddings.json; git commit -m "Add TAMU RAG embeddings"
+```
+
+3) Deploy to Vercel. The `vercel.json` includes the `rag/**` files in the Serverless Function bundle and ensures a Node runtime (not Edge).
+
+Environment variables in Vercel:
+
+- `GEMINI_API_KEY`: Google AI Studio API key
+
+Notes:
+
+- The API will fall back gracefully if the embeddings file is missing.
+- For time-sensitive questions (dates, “latest”), the API can also use Google Search.
