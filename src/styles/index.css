@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html, body {
+  @apply bg-black text-white;
+}
+
+html {
+  scroll-behavior: smooth;
+  /* Offset anchor jumps for fixed navbar height */
+  scroll-padding-top: 88px;
+}
+
+/* Glassmorphism utilities */
+.glass {
+  @apply bg-glass-gradient backdrop-blur-md border border-white/10 shadow-innerglass;
+}
+
+/* Neon text/glow helpers */
+.neon-text {
+  text-shadow: 0 0 8px rgba(155,92,255,0.6), 0 0 16px rgba(212,0,87,0.35);
+}
+
+.neon-ring {
+  box-shadow: 0 0 0 1px rgba(155,92,255,0.35), 0 0 20px rgba(155,92,255,0.45), inset 0 0 30px rgba(212,0,87,0.15);
+}
+
+.button-neon {
+  @apply relative inline-flex items-center justify-center px-6 py-3 rounded-xl font-semibold tracking-wide transition-transform duration-200;
+  background: radial-gradient(120% 120% at 0% 0%, rgba(212,0,87,0.18), transparent 60%), radial-gradient(120% 120% at 100% 100%, rgba(155,92,255,0.18), transparent 60%);
+}
+.button-neon:hover { transform: translateY(-2px); }
+.button-primary {
+  @apply button-neon;
+  background-color: rgba(122,0,38,0.35);
+  border: 1px solid rgba(212,0,87,0.55);
+  box-shadow: 0 0 20px rgba(212,0,87,0.35);
+}
+.button-secondary {
+  @apply button-neon;
+  background-color: rgba(124,58,237,0.25);
+  border: 1px solid rgba(155,92,255,0.55);
+  box-shadow: 0 0 20px rgba(155,92,255,0.35);
+}
+
+.section {
+  @apply relative py-20 md:py-28 px-6 md:px-10 max-w-7xl mx-auto;
+}
+
+.section-title {
+  @apply font-futuristic text-3xl md:text-4xl font-semibold tracking-wide neon-text;
+}
+
+.card {
+  @apply glass rounded-2xl p-6 md:p-8 hover:shadow-neon transition-shadow duration-300;
+}
