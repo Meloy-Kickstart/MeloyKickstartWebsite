@@ -47,3 +47,24 @@ npm run preview
 - TailwindCSS 3
 - framer-motion for micro-interactions
 - react-tsparticles for background particles
+
+## Supabase integration
+
+The "Partner with Us" form (Career Fair section) saves submissions to Supabase.
+
+Setup:
+- Create a `.env` file (see `.env.example`) and set:
+	- `VITE_SUPABASE_URL`
+	- `VITE_SUPABASE_ANON_KEY`
+- In your Supabase SQL editor, run `supabase/schema.sql` to create the `startup_contacts` table and insert-only RLS policy.
+
+Data captured:
+- company (required)
+- contact_name (optional)
+- contact_email (required)
+- website (optional)
+- hiring_types (array: Internship, Full-time, Contract)
+- message (optional)
+- source_section (e.g. "career_fair")
+
+Security: RLS allows anonymous inserts only; there is no public select/update/delete access. Never put the service role key in client apps.

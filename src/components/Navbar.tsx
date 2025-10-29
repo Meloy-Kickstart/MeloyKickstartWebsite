@@ -4,6 +4,7 @@ const SECTIONS = [
   { id: "home", label: "Home" },
   { id: "about", label: "About" },
   { id: "join", label: "Join" },
+  { id: "chat", label: "Chat" },
   { id: "partner", label: "Career Fair" },
   { id: "events", label: "Events" },
 ];
@@ -49,7 +50,14 @@ export const Navbar = () => {
       <div className="mx-auto max-w-7xl px-4 md:px-6">
         <div className="mt-4 rounded-2xl glass backdrop-blur-md border border-white/10">
           <nav className="flex items-center justify-between px-4 py-3">
-            <a href="#home" className="flex items-center gap-2">
+            <a href="#home" className="flex items-center gap-3">
+              <img
+                src="/Logo.png"
+                alt="Meloy Kickstart logo"
+                className="h-7 w-7 md:h-8 md:w-8 rounded-sm shadow-sm"
+                loading="eager"
+                decoding="async"
+              />
               <span className="font-futuristic text-lg tracking-wide neon-text">
                 Meloy Kickstart
               </span>

@@ -6,6 +6,7 @@ import { Footer } from "./sections/Footer";
 import { ParticlesBackground } from "./components/ParticlesBackground";
 import { Join } from "./sections/Join";
 import { Navbar } from "./components/Navbar";
+import { Chat } from "./sections/Chat";
 
 export default function App() {
   return (
@@ -17,6 +18,7 @@ export default function App() {
         <Hero />
         <About />
         <Join />
+        <Chat />
         <CareerFair />
         <Events />
       </main>
