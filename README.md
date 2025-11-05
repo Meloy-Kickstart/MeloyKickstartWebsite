@@ -33,7 +33,6 @@ npm run preview
 
 ## Customize
 - Replace placeholder social links in `Footer.tsx`
-- Replace TAMU logo placeholder with an official asset if permitted by trademark guidelines
 - Adjust events in `src/sections/Events.tsx`
 - Hook up a real backend or Formspree for the forms if desired
 

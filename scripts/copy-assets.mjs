@@ -26,7 +26,7 @@ async function copyIfExists(filename) {
   try {
     await mkdir(publicDir, { recursive: true });
     // List of files we want to ensure are available from the site root
-    const files = ["Logo.png", "tamuLogo.png"];
+    const files = ["Logo.png"];
     for (const f of files) {
       await copyIfExists(f);
     }
