@@ -37,21 +37,16 @@ const events: Event[] = [
   },
 ];
 
+const DISCORD =
+  import.meta.env.VITE_DISCORD_INVITE || "https://discord.gg/34MX3ETzxk";
+
 export const Events = () => {
   return (
     <section id="events" className="section">
       <div className="flex items-baseline justify-between gap-6 flex-wrap">
         <h2 className="section-title">Meetings & Events.</h2>
         <div className="flex gap-3 text-sm">
-          <a href="#join" className="button-secondary">
-            Get Notified
-          </a>
-          <a
-            href="https://discord.com"
-            target="_blank"
-            rel="noreferrer"
-            className="button-primary"
-          >
+          <a href={DISCORD} target="_blank" rel="noreferrer" className="button-primary">
             Join Discord
           </a>
         </div>

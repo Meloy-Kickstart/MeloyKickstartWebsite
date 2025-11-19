@@ -20,21 +20,13 @@ export const Hero = () => {
         />
       </div>
       <div className="max-w-5xl mx-auto text-center">
-        <motion.p
-          initial={{ opacity: 0, y: 10 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="text-violet-neon/80 font-medium tracking-widest uppercase mb-4"
-        >
-          Engineering Entrepreneurship @ Texas A&M
-        </motion.p>
         <motion.h1
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.05 }}
           className="font-futuristic neon-text text-4xl md:text-6xl leading-tight"
         >
-          Igniting the Next Generation of Engineering Entrepreneurs.
+          Kickstart Your Journey from Engineer to Entrepreneur!
         </motion.h1>
         <motion.p
           initial={{ opacity: 0, y: 10 }}
@@ -42,8 +34,11 @@ export const Hero = () => {
           transition={{ duration: 0.7, delay: 0.1 }}
           className="text-zinc-300/90 mt-6 text-lg md:text-xl max-w-3xl mx-auto"
         >
-          Meloy Kickstart empowers Aggies to build, launch, and grow startups —
-          through community, mentorship, and real-world opportunities.
+          We empower Aggies to launch their entrepreneurial journey by
+          connecting them with successful business leaders and startup experts,
+          providing access to TAMU's multi-million dollar entrepreneurship
+          resources, offering industry-led entrepreneurship classes, and
+          fostering a community of ambitious founders.{" "}
         </motion.p>
         <motion.div
           initial={{ opacity: 0, y: 10 }}
