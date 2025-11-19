@@ -58,6 +58,15 @@ export const CareerFair = () => {
         Each year, Meloy Kickstart hosts a career fair connecting innovative
         startups with Texas A&M’s brightest engineering talent.
       </p>
+      <br/>
+      <a
+                href="https://forms.gle/akdGxBSihVbgd8Em7"
+                target="_blank"
+                rel="noreferrer"
+                className="button-secondary inline-flex items-center justify-center gap-2"
+              >
+                Student Interest Form
+              </a>
 
       <div className="grid md:grid-cols-2 gap-8 mt-10">
         <div className="card">
@@ -163,9 +172,10 @@ export const CareerFair = () => {
                 placeholder="What roles are you hiring? Internship or full-time?"
                 className="w-full rounded-xl bg-surface-800/60 border border-white/10 px-4 py-3 outline-none focus:border-violet-neon/60"
               />
+
             </div>
 
-            <div className="pt-2">
+            <div className="pt-2 flex flex-wrap gap-3">
               <button
                 type="submit"
                 disabled={!valid || submitting}
@@ -175,6 +185,7 @@ export const CareerFair = () => {
               >
                 {submitting ? "Submitting…" : "Partner with Us"}
               </button>
+              
             </div>
           </form>
         </div>

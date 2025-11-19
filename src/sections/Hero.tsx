@@ -50,7 +50,7 @@ export const Hero = () => {
             Join the Club
           </a>
           <a href="#partner" className="button-secondary">
-            Bring Your Startup
+            Startup Career Fair
           </a>
         </motion.div>
       </div>
