@@ -9,7 +9,7 @@ type ChatMsg = {
 };
 
 const DISCORD =
-  import.meta.env.VITE_DISCORD_INVITE || "https://discord.gg/34MX3ETzxk";
+  import.meta.env.VITE_DISCORD_INVITE || "https://discord.gg/jK5uQRXfSE";
 
 // Rough-and-ready keyword scorer for small documents
 function topRelevantChunks(

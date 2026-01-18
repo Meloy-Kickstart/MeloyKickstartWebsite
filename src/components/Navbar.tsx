@@ -2,11 +2,11 @@ import { useEffect, useMemo, useState } from "react";
 
 const SECTIONS = [
   { id: "home", label: "Home" },
-  { id: "about", label: "About" },
+  { id: "offerings", label: "What We Offer" },
   { id: "join", label: "Join" },
-  { id: "chat", label: "Chat" },
-  { id: "partner", label: "Career Fair" },
   { id: "events", label: "Events" },
+  { id: "partner", label: "Career Fair" },
+  { id: "chat", label: "Chat" },
 ];
 
 export const Navbar = () => {

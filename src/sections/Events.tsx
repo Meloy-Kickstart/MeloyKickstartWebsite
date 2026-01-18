@@ -1,7 +1,10 @@
+import { motion } from "framer-motion";
+
 type Event = {
   date: string;
   title: string;
   desc: string;
+  featured?: boolean;
 };
 
 const events: Event[] = [
@@ -32,19 +35,25 @@ const events: Event[] = [
   },
   {
     date: "Nov 13",
-    title: "TBD",
-    desc: "TBD",
+    title: "Peer Demo Night",
+    desc: "Showcase what you're building, get feedback, and inspire others.",
+    featured: true,
   },
 ];
 
 const DISCORD =
-  import.meta.env.VITE_DISCORD_INVITE || "https://discord.gg/34MX3ETzxk";
+  import.meta.env.VITE_DISCORD_INVITE || "https://discord.gg/jK5uQRXfSE";
 
 export const Events = () => {
   return (
     <section id="events" className="section">
       <div className="flex items-baseline justify-between gap-6 flex-wrap">
-        <h2 className="section-title">Meetings & Events.</h2>
+        <div>
+          <h2 className="section-title">Meetings & Events</h2>
+          <p className="text-zinc-300/90 mt-3 max-w-2xl">
+            Bi-weekly workshops, guest speakers, demo nights, and more. Join us every other week to level up your startup game.
+          </p>
+        </div>
         <div className="flex gap-3 text-sm">
           <a href={DISCORD} target="_blank" rel="noreferrer" className="button-primary">
             Join Discord
@@ -52,9 +61,23 @@ export const Events = () => {
         </div>
       </div>
 
-      <div className="mt-8 grid md:grid-cols-2 gap-6">
-        {events.map((e) => (
-          <div key={e.title} className="card relative overflow-hidden">
+      <div className="mt-10 grid md:grid-cols-2 gap-6">
+        {events.map((e, idx) => (
+          <motion.div
+            key={e.title}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: idx * 0.05 }}
+            viewport={{ once: true }}
+            className={`card relative overflow-hidden ${
+              e.featured ? "border-2 border-violet-neon/30" : ""
+            }`}
+          >
+            {e.featured && (
+              <div className="absolute top-0 right-0 bg-violet-neon/20 text-violet-neon text-xs font-bold px-3 py-1 rounded-bl-lg">
+                FEATURED
+              </div>
+            )}
             <div
               className="absolute -left-6 top-6 w-24 h-24 rounded-full blur-3xl opacity-20"
               style={{
@@ -63,7 +86,7 @@ export const Events = () => {
               }}
             />
             <div className="flex items-start gap-4">
-              <div className="neon-ring rounded-xl px-3 py-2 bg-surface-800/60 font-futuristic text-violet-neon/90">
+              <div className="neon-ring rounded-xl px-3 py-2 bg-surface-800/60 font-futuristic text-violet-neon/90 flex-shrink-0">
                 {e.date}
               </div>
               <div>
@@ -71,7 +94,7 @@ export const Events = () => {
                 <p className="text-zinc-300/90 mt-1">{e.desc}</p>
               </div>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
     </section>

@@ -24,33 +24,39 @@ export const Hero = () => {
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.05 }}
-          className="font-futuristic neon-text text-4xl md:text-6xl leading-tight"
+          className="font-futuristic neon-text text-4xl md:text-6xl lg:text-7xl leading-tight"
         >
-          Kickstart Your Journey from Engineer to Entrepreneur!
+          Your Startup Journey Starts Here
         </motion.h1>
         <motion.p
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.1 }}
-          className="text-zinc-300/90 mt-6 text-lg md:text-xl max-w-3xl mx-auto"
+          className="text-zinc-200/95 mt-6 text-xl md:text-2xl max-w-4xl mx-auto font-medium"
         >
-          We empower Aggies to launch their entrepreneurial journey by
-          connecting them with successful business leaders and startup experts,
-          providing access to TAMU's multi-million dollar entrepreneurship
-          resources, offering industry-led entrepreneurship classes, and
-          fostering a community of ambitious founders.{" "}
+          From first idea to revenue-generating startup — we meet you where you are.
+        </motion.p>
+        <motion.p
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.15 }}
+          className="text-zinc-300/90 mt-4 text-lg md:text-xl max-w-3xl mx-auto"
+        >
+          Join a community of driven, ambitious students building the future.
+          Network with top startup speakers, get hands-on workshops, find your co-founders, 
+          and launch your venture with real support.
         </motion.p>
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.15 }}
-          className="mt-8 flex items-center justify-center gap-4"
+          transition={{ duration: 0.7, delay: 0.2 }}
+          className="mt-10 flex items-center justify-center gap-4 flex-wrap"
         >
-          <a href="#join" className="button-primary">
-            Join the Club
+          <a href="#join" className="button-primary text-lg px-8 py-4">
+            Join the Community
           </a>
-          <a href="#partner" className="button-secondary">
-            Startup Career Fair
+          <a href="#offerings" className="button-secondary text-lg px-8 py-4">
+            See What We Offer
           </a>
         </motion.div>
       </div>
