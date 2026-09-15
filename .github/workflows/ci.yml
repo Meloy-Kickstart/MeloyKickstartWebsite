@@ -30,13 +30,15 @@ jobs:
       - name: Test
         run: npm test
 
-      # `prebuild` refreshes src/data/luma-events.json from Luma.
-      # If Luma is unreachable the committed snapshot is used.
+      # `prebuild` refreshes src/data/luma-events.json from Luma and
+      # src/data/instagram-posts.json from Behold. If either is unreachable
+      # the committed snapshot is used.
       - name: Build
         run: npm run build
         env:
           VITE_SHEETS_WEBHOOK_URL: ${{ secrets.VITE_SHEETS_WEBHOOK_URL }}
           VITE_DISCORD_INVITE: ${{ vars.VITE_DISCORD_INVITE }}
+          VITE_INSTAGRAM_FEED_URL: ${{ vars.VITE_INSTAGRAM_FEED_URL }}
 
       - name: Fail if the Luma fetch changed the committed events
         run: |

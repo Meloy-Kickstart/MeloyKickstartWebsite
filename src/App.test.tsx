@@ -2,7 +2,8 @@ import { render, screen, within } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import App from "./App";
-import { instagramPosts } from "./data/instagram";
+import instagram from "./data/instagram-posts.json";
+import { photos } from "./data/photos";
 import luma from "./data/luma-events.json";
 
 describe("landing page", () => {
@@ -34,9 +35,16 @@ describe("landing page", () => {
     expect(cards).toHaveLength(expected);
   });
 
-  it("embeds the configured Instagram posts", () => {
-    const quotes = document.querySelectorAll("blockquote.instagram-media");
-    expect(quotes).toHaveLength(instagramPosts.length);
+  it("shows every event photo in the carousel", () => {
+    const strip = screen.getByRole("region", { name: /event photos/i });
+    // Clones for the loop are aria-hidden, so only the real set is exposed
+    expect(within(strip).getAllByRole("img")).toHaveLength(photos.length);
+    expect(strip.querySelectorAll("img")).toHaveLength(photos.length * 3);
+  });
+
+  it("shows at most three Instagram posts from the snapshot", () => {
+    const cards = screen.queryAllByRole("link", { name: /instagram post/i });
+    expect(cards).toHaveLength(Math.min(3, instagram.posts.length));
   });
 
   it("points social links at the real accounts", () => {

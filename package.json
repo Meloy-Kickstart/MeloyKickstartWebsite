@@ -5,8 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "prebuild": "node scripts/fetch-luma.mjs",
+    "prebuild": "node scripts/fetch-luma.mjs && node scripts/fetch-instagram.mjs",
     "luma": "node scripts/fetch-luma.mjs",
+    "instagram": "node scripts/fetch-instagram.mjs",
     "build": "tsc -b && vite build",
     "preview": "vite preview --port 5173",
     "typecheck": "tsc -b",
