@@ -34,8 +34,8 @@ npm run preview
 
 ## Customize
 - Replace placeholder social links in `Footer.tsx`
-- Adjust events in `src/sections/Events.tsx`
-- Hook up a real backend or Formspree for the forms if desired
+- Events come from Luma at build time (`npm run luma` refreshes `src/data/luma-events.json`)
+- Instagram posts come from Behold (see below)
 
 ## Accessibility & Motion
 - Smooth scrolling enabled
@@ -51,9 +51,10 @@ npm run test:watch
 ```
 
 - `src/lib/events.test.ts`: Luma title cleanup and date formatting.
-- `src/App.test.tsx`: renders the page; checks nav, hero, events, Instagram embeds, footer links, and the partner form's validation.
+- `src/lib/instagram.test.ts`: Behold feed parsing (newest three, image choice).
+- `src/App.test.tsx`: renders the page; checks nav, hero, events, Instagram cards, footer links, and the partner form's validation.
 - `.github/workflows/ci.yml` runs typecheck, tests, and build on every push and pull request.
-- Optional GitHub secret `VITE_SHEETS_WEBHOOK_URL` and variable `VITE_DISCORD_INVITE` feed the CI build. They are not needed for tests.
+- GitHub secret `VITE_SHEETS_WEBHOOK_URL` and variables `VITE_DISCORD_INVITE`, `VITE_INSTAGRAM_FEED_URL` feed the CI build. They are not needed for tests.
 
 ## Tech
 - React 18, Vite 5, TypeScript 5
@@ -64,15 +65,40 @@ npm run test:watch
 
 The "Partner with us" form posts to a Google Apps Script web app, which appends a row to a Google Sheet. No database.
 
-Setup:
-1. Create a Google Sheet.
-2. Extensions → Apps Script. Paste `google-apps-script/Code.gs`.
-3. Deploy → New deployment → Web app. Execute as **Me**, access **Anyone**.
-4. Copy the Web app URL into `VITE_SHEETS_WEBHOOK_URL` (see `.env.example`). Set the same variable in Vercel.
-5. Open the URL in a browser. It should return `{"ok":true,...}`.
+Live links (need club Drive access):
+- Sheet: [landing-startup-fair-responses](https://docs.google.com/spreadsheets/d/1-RgvsSnnZsQ8O3b0JXCbuVbvR5EJMlkfV1kY_g_wUt8/edit) — tab "Submissions", in the Startup Career Fair Drive folder
+- Apps Script: [Kickstart website partner form](https://script.google.com/home/projects/1vAsP-ZRWMRTSQP7x298A6hAYIgugQj5wS3q7-eH3UXo9itweMgfgB_iZ/edit) — owned by the officer who deployed it (Sep 2026: Aisha, aishasalimg@tamu.edu)
+- The web app URL is the value of `VITE_SHEETS_WEBHOOK_URL`. It lives in `.env`, the GitHub secret, and Vercel. Not in this repo.
+
+Setup from scratch (or to move it to another account):
+1. Open `google-apps-script/Code.gs`. Put the Sheet ID in `SHEET_ID`.
+2. Go to [script.google.com](https://script.google.com) → New project. Paste the file.
+3. Run `formatSheet` once from the editor. It styles the sheet.
+4. Deploy → New deployment → Web app. Execute as **Me**, access **Anyone**.
+5. Copy the Web app URL into `VITE_SHEETS_WEBHOOK_URL` (see `.env.example`). Set the same value in GitHub (secret) and Vercel.
+6. Open the URL in a browser. It should return `{"ok":true,...}`.
 
 Columns written: Timestamp, Company, Contact Name, Contact Email, Website, Partner Types, Message, Source.
 
 Notes:
 - The endpoint is public. Anyone who finds the URL can append rows. Keep the URL out of git.
-- After editing `Code.gs`, re-deploy as a new version or the live URL keeps the old code.
+- After editing `Code.gs`, re-deploy as a new version (Deploy → Manage deployments → Edit → Version: New version) or the live URL keeps the old code.
+- Officer hand-off: the script runs as the deployer's Google account. Before that person leaves, redeploy from the club account (`meloykickstart@gmail.com`) and update the URL in the three places above.
+
+## Instagram → Behold
+
+The "On Instagram" section shows the three newest posts from `@meloykickstart`. The posts come from a [Behold](https://behold.so) JSON feed. Behold keeps the Instagram token fresh and hosts the images.
+
+Live links:
+- Behold feed: [Kickstart website](https://app.behold.so/feeds/8lbzhK7erLeUCWeO27d8) — JSON at `https://feeds.behold.so/8lbzhK7erLeUCWeO27d8`
+- Behold account: `aishasalimg@gmail.com` (Sep 2026). Move it to `meloykickstart@gmail.com` at hand-off (Behold → Account → Change email).
+
+How it works:
+- `scripts/fetch-instagram.mjs` snapshots the feed into `src/data/instagram-posts.json` before every build (`npm run instagram` to refresh by hand).
+- The browser then fetches the live feed on load. If that fails, the snapshot shows.
+- `VITE_INSTAGRAM_FEED_URL` holds the feed URL. Set it in `.env`, GitHub (variable), and Vercel.
+
+Notes:
+- Instagram must stay a professional account (Business or Creator). Behold requires it.
+- If Behold shows the source as "Disconnected" (password change, app removed in Instagram settings), log in as `@meloykickstart` and reconnect from Behold → Sources.
+- Free plan: 1,200 feed views per month. Past that, the live fetch fails and the snapshot from the last deploy shows until the next push.
