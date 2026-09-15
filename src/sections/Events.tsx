@@ -1,4 +1,6 @@
 import { motion } from "framer-motion";
+import { useRef } from "react";
+import { Shapes } from "../components/Shapes";
 import { Reveal, SplitLines } from "../components/motion";
 import raw from "../data/luma-events.json";
 import { eventTitle, formatEventDate, type LumaEvent } from "../lib/events";
@@ -66,9 +68,18 @@ const EventCard = ({ e, idx, past }: { e: LumaEvent; idx: number; past?: boolean
 export const Events = () => {
   const upcoming = data.upcoming;
   const past = data.past.slice(0, 4);
+  const ref = useRef<HTMLElement>(null);
 
   return (
-    <section id="events" className="section">
+    <section ref={ref} id="events" className="section isolate">
+      <Shapes
+        target={ref}
+        shapes={[
+          { kind: "circle", className: "-left-32 -top-16 h-80 w-80 sm:h-[30rem] sm:w-[30rem]", drift: -100 },
+          { kind: "cloud", className: "-right-24 bottom-16 h-28 w-64 sm:h-40 sm:w-96", drift: 50 },
+          { kind: "donut", className: "-right-12 top-[6%] h-40 w-40 sm:-right-16 sm:h-56 sm:w-56", drift: -140, spin: -120 },
+        ]}
+      />
       <div className="wrap">
         <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <div className="max-w-2xl">

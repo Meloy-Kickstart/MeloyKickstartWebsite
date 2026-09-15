@@ -7,6 +7,8 @@ import {
   FaGraduationCap,
 } from "react-icons/fa";
 import { motion } from "framer-motion";
+import { useRef } from "react";
+import { Shapes } from "../components/Shapes";
 import { Reveal, SplitLines } from "../components/motion";
 import type { ReactNode } from "react";
 
@@ -57,8 +59,16 @@ const offerings: Offering[] = [
 ];
 
 export const About = () => {
+  const ref = useRef<HTMLElement>(null);
   return (
-    <section id="offerings" className="section">
+    <section ref={ref} id="offerings" className="section isolate">
+      <Shapes
+        target={ref}
+        shapes={[
+          { kind: "donut", className: "-right-16 top-8 h-64 w-64 sm:-right-24 sm:h-96 sm:w-96", drift: -120, spin: 90 },
+          { kind: "cloud", className: "-left-20 bottom-24 h-32 w-72 sm:h-44 sm:w-[28rem]", drift: 60 },
+        ]}
+      />
       <div className="wrap">
         <div className="max-w-3xl">
           <Reveal as="p" className="eyebrow">
