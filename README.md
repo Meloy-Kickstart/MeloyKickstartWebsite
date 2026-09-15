@@ -4,7 +4,7 @@ A cream-and-maroon React landing page styled after the 2026 Meloy Kickstart bran
 
 ## Quick start
 
-```powershell
+```bash
 # From the project folder
 npm install
 npm run dev
@@ -13,7 +13,7 @@ npm run dev
 - Dev server runs at http://localhost:5173
 - Build for production:
 
-```powershell
+```bash
 npm run build
 npm run preview
 ```
@@ -44,7 +44,7 @@ npm run preview
 
 ## Tests & CI
 
-```powershell
+```bash
 npm run typecheck   # tsc
 npm test            # vitest (jsdom)
 npm run test:watch

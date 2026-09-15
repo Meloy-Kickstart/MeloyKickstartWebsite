@@ -16,10 +16,9 @@ pnpm-debug.log*
 .vscode
 .DS_Store
 
-#env
+# env (keep the example)
 .env
-.env.local
-.env.*.local
-*.env*
+.env.*
+!.env.example
 .vercel
 tsconfig.tsbuildinfo
