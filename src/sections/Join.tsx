@@ -1,74 +1,55 @@
 import { motion } from "framer-motion";
-import { FaDiscord, FaCalendarAlt, FaBell } from "react-icons/fa";
+import { FaDiscord } from "react-icons/fa";
+import { Reveal, SplitLines } from "../components/motion";
 
 const DISCORD =
   import.meta.env.VITE_DISCORD_INVITE || "https://discord.gg/jK5uQRXfSE";
 
 export const Join = () => {
-
   return (
-    <section id="join" className="section bg-gradient-to-b from-violet-500/5 to-transparent">
-      <div className="max-w-4xl mx-auto text-center">
-        <motion.h2 
-          initial={{ opacity: 0, y: 10 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="section-title"
-        >
-          Join the Community
-        </motion.h2>
-        <motion.p 
-          initial={{ opacity: 0, y: 10 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.1 }}
-          className="text-zinc-200/90 mt-6 text-lg md:text-xl max-w-3xl mx-auto"
-        >
-          Connect with ambitious builders, get exclusive access to events and workshops, 
-          and stay updated on everything happening in the TAMU startup ecosystem.
-        </motion.p>
+    <section id="join" className="section bg-rose-50">
+      <div className="wrap grid gap-10 lg:grid-cols-2 lg:items-center lg:gap-16">
+        <div>
+          <Reveal as="p" className="eyebrow">
+            No membership
+          </Reveal>
+          <SplitLines
+            lines={["Free.", "Just show up."]}
+            className="display text-display-lg mt-4"
+          />
+          <Reveal as="p" delay={0.2} className="lede mt-6 max-w-lg">
+            No fees, no sign-up, no application. Any major. Come to a
+            meeting.
+          </Reveal>
+        </div>
 
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="mt-12 grid md:grid-cols-3 gap-6"
+        <motion.a
+          href={DISCORD}
+          target="_blank"
+          rel="noreferrer"
+          initial={{ opacity: 0, x: 40 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          whileHover={{ y: -6 }}
+          viewport={{ once: true, margin: "-40px" }}
+          transition={{ duration: 0.7, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
+          className="group relative overflow-hidden rounded-2xl bg-maroon p-8 text-cream shadow-lift lg:p-12"
         >
-          <div className="card text-center">
-            <FaDiscord className="text-violet-neon text-4xl mx-auto mb-3" />
-            <h3 className="font-semibold text-lg mb-2">Discord Community</h3>
-            <p className="text-zinc-300/90 text-sm">Daily discussions, help, and collaboration</p>
-          </div>
-          <div className="card text-center">
-            <FaBell className="text-violet-neon text-4xl mx-auto mb-3" />
-            <h3 className="font-semibold text-lg mb-2">Event Updates</h3>
-            <p className="text-zinc-300/90 text-sm">Never miss workshops or speaker events</p>
-          </div>
-          <div className="card text-center">
-            <FaCalendarAlt className="text-violet-neon text-4xl mx-auto mb-3" />
-            <h3 className="font-semibold text-lg mb-2">Demo Nights</h3>
-            <p className="text-zinc-300/90 text-sm">Showcase your work and get feedback</p>
-          </div>
-        </motion.div>
-
-        <motion.div 
-          initial={{ opacity: 0, y: 10 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-          className="mt-10"
-        >
-          <a
-            href={DISCORD}
-            target="_blank"
-            rel="noreferrer"
-            className="button-primary text-lg px-10 py-4 inline-flex items-center gap-3"
-          >
-            <FaDiscord className="text-2xl" />
-            Join Discord Now
-          </a>
-          <p className="text-zinc-400/90 text-sm mt-4">
-            Free to join • Active community • Weekly events
+          <FaDiscord
+            aria-hidden
+            className="pointer-events-none absolute -bottom-8 -right-8 text-[11rem] text-cream/10 transition-transform duration-700 group-hover:rotate-12 group-hover:scale-110"
+          />
+          <p className="eyebrow text-cream/60">Stay updated</p>
+          <h3 className="display mt-4 text-display-md text-cream">
+            Join the Discord
+          </h3>
+          <p className="mt-4 max-w-sm text-cream/80">
+            Every event, workshop link, and reminder goes there first.
           </p>
-        </motion.div>
+          <span className="btn mt-8 bg-cream text-maroon group-hover:bg-rose-100">
+            <FaDiscord className="text-lg" />
+            Open invite
+          </span>
+        </motion.a>
       </div>
     </section>
   );

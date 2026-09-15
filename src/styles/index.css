@@ -3,68 +3,70 @@
 @tailwind utilities;
 
 :root {
-  color-scheme: dark;
-}
-
-html, body {
-  @apply bg-black text-white;
+  color-scheme: light;
 }
 
 html {
   scroll-behavior: smooth;
-  /* Offset anchor jumps for fixed navbar height */
-  scroll-padding-top: 88px;
+  /* Offset anchor jumps for the fixed navbar */
+  scroll-padding-top: 5.5rem;
 }
 
-/* Glassmorphism utilities */
-.glass {
-  @apply bg-glass-gradient backdrop-blur-md border border-white/10 shadow-innerglass;
+html,
+body {
+  @apply bg-cream text-ink antialiased;
 }
 
-/* Neon text/glow helpers */
-.neon-text {
-  text-shadow: 0 0 8px rgba(155,92,255,0.6), 0 0 16px rgba(212,0,87,0.35);
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }
 
-.neon-ring {
-  box-shadow: 0 0 0 1px rgba(155,92,255,0.35), 0 0 20px rgba(155,92,255,0.45), inset 0 0 30px rgba(212,0,87,0.15);
-}
+@layer components {
+  /* Layout */
+  .section {
+    @apply relative py-16 sm:py-20 lg:py-28;
+  }
+  .wrap {
+    @apply mx-auto w-full max-w-7xl px-5 sm:px-6 lg:px-10;
+  }
 
-.button-neon {
-  @apply relative inline-flex items-center justify-center px-6 py-3 rounded-xl font-semibold tracking-wide transition-transform duration-200;
-  background: radial-gradient(120% 120% at 0% 0%, rgba(212,0,87,0.18), transparent 60%), radial-gradient(120% 120% at 100% 100%, rgba(155,92,255,0.18), transparent 60%);
-}
-.button-neon:hover { 
-  transform: translateY(-2px); 
-  box-shadow: 0 0 30px currentColor;
-}
-.button-primary {
-  @apply button-neon;
-  background-color: rgba(122,0,38,0.35);
-  border: 1px solid rgba(212,0,87,0.55);
-  box-shadow: 0 0 20px rgba(212,0,87,0.35);
-}
-.button-primary:hover {
-  box-shadow: 0 0 30px rgba(212,0,87,0.5), 0 4px 20px rgba(212,0,87,0.3);
-}
-.button-secondary {
-  @apply button-neon;
-  background-color: rgba(124,58,237,0.25);
-  border: 1px solid rgba(155,92,255,0.55);
-  box-shadow: 0 0 20px rgba(155,92,255,0.35);
-}
-.button-secondary:hover {
-  box-shadow: 0 0 30px rgba(155,92,255,0.5), 0 4px 20px rgba(155,92,255,0.3);
-}
+  /* Type — mirrors the poster: heavy uppercase display + wide-tracked labels */
+  .display {
+    @apply font-extrabold uppercase text-maroon;
+  }
+  .eyebrow {
+    @apply text-[0.7rem] sm:text-xs font-medium uppercase tracking-label text-maroon-600;
+  }
+  .lede {
+    @apply text-base sm:text-lg leading-relaxed text-ink/80;
+  }
 
-.section {
-  @apply relative py-20 md:py-28 px-6 md:px-10 max-w-7xl mx-auto;
-}
+  /* Buttons */
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold uppercase tracking-wider transition-all duration-300 ease-out active:scale-95;
+    @apply focus:outline-none focus-visible:ring-2 focus-visible:ring-maroon focus-visible:ring-offset-2 focus-visible:ring-offset-cream;
+  }
+  .btn-primary {
+    @apply btn bg-maroon text-cream hover:bg-maroon-600 hover:-translate-y-0.5 hover:shadow-lift;
+  }
+  .btn-secondary {
+    @apply btn border-2 border-maroon bg-cream text-maroon hover:bg-rose-100 hover:-translate-y-0.5;
+  }
 
-.section-title {
-  @apply font-futuristic text-3xl md:text-4xl font-semibold tracking-wide neon-text;
-}
+  /* Cards */
+  .card {
+    @apply relative rounded-2xl border-2 border-maroon/15 bg-white/60 p-6 sm:p-8 transition-all duration-200;
+    @apply hover:border-maroon hover:bg-white hover:shadow-lift;
+  }
 
-.card {
-  @apply glass rounded-2xl p-6 md:p-8 hover:shadow-neon transition-shadow duration-300;
+  /* Form fields */
+  .field {
+    @apply w-full rounded-xl border-2 border-maroon/20 bg-white/70 px-4 py-3 text-ink placeholder:text-ink/40 outline-none transition-colors;
+    @apply focus:border-maroon focus:bg-white;
+  }
+  .label {
+    @apply mb-2 block text-xs font-medium uppercase tracking-wider text-maroon-600;
+  }
 }

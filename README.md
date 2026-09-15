@@ -1,6 +1,6 @@
 # Meloy Kickstart — Engineering Entrepreneurship @ Texas A&M
 
-A dark, futuristic React website with animated gradients, particles, glassmorphism, and neon accents (electric maroon + violet). Built with Vite + React + TypeScript + TailwindCSS.
+A cream-and-maroon React landing page styled after the 2026 Meloy Kickstart brand graphics. Built with Vite + React + TypeScript + TailwindCSS.
 
 ## Quick start
 
@@ -19,17 +19,18 @@ npm run preview
 ```
 
 ## Sections
-- Hero: Headline, subtext, CTAs (Join the Club / Bring Your Startup) with particle background
-- About: Cards for Learn Startup Skills, Find Co-Founders, Build Real Ventures
-- Startup Career Fair: Description + elegant contact form (mailto-based)
-- Events: Futuristic glowing cards with upcoming meetings
-- Join: Simple email capture using mailto fallback
-- Footer: Minimal glowing footer with Texas A&M mention, email, socials
+- Hero: Framed poster with logo lockup, tagline, headline, CTAs, and wave graphic
+- What We Offer: Offering cards + "Ready to start building?" banner
+- Join: Discord CTA with perks list
+- Events: Date-led agenda list
+- Partner: For startups and companies — speak, hire, sponsor, or join the spring career fair. Form writes to a Google Sheet
+- Footer: Maroon footer with contact and social links
 
 ## Theming
-- Fonts: Space Grotesk (body), Orbitron (futuristic headings)
-- Colors in `tailwind.config.ts`: electric maroon + violet accents
-- Global styles in `src/styles/index.css` include neon/glass helpers
+- Font: Poppins (all weights via Google Fonts)
+- Colors in `tailwind.config.ts`: `cream`, `ink`, `maroon`, `rose` scales
+- Fluid display sizes (`text-display-xl/lg/md`) use `clamp()` so headlines scale without breakpoints
+- Shared classes in `src/styles/index.css`: `.display`, `.eyebrow`, `.rule`, `.lede`, `.btn-primary`, `.btn-secondary`, `.card`, `.field`, `.label`
 
 ## Customize
 - Replace placeholder social links in `Footer.tsx`
@@ -45,55 +46,20 @@ npm run preview
 - React 18, Vite 5, TypeScript 5
 - TailwindCSS 3
 - framer-motion for micro-interactions
-- react-tsparticles for background particles
 
-## Supabase integration
+## Partner form → Google Sheet
 
-The "Partner with Us" form (Career Fair section) saves submissions to Supabase.
+The "Partner with us" form posts to a Google Apps Script web app, which appends a row to a Google Sheet. No database.
 
 Setup:
-- Create a `.env` file (see `.env.example`) and set:
-	- `VITE_SUPABASE_URL`
-	- `VITE_SUPABASE_ANON_KEY`
-- In your Supabase SQL editor, run `supabase/schema.sql` to create the `startup_contacts` table and insert-only RLS policy.
+1. Create a Google Sheet.
+2. Extensions → Apps Script. Paste `google-apps-script/Code.gs`.
+3. Deploy → New deployment → Web app. Execute as **Me**, access **Anyone**.
+4. Copy the Web app URL into `VITE_SHEETS_WEBHOOK_URL` (see `.env.example`). Set the same variable in Vercel.
+5. Open the URL in a browser. It should return `{"ok":true,...}`.
 
-Data captured:
-- company (required)
-- contact_name (optional)
-- contact_email (required)
-- website (optional)
-- hiring_types (array: Internship, Full-time, Contract)
-- message (optional)
-- source_section (e.g. "career_fair")
-
-Security: RLS allows anonymous inserts only; there is no public select/update/delete access. Never put the service role key in client apps.
-
-## Optional: Enable RAG for better answers
-
-Build a small, local vector index of `TAMUStartup.txt` so the chatbot can answer more confidently from your content.
-
-1) Create embeddings (one-time; requires `GEMINI_API_KEY`):
-
-```powershell
-$env:GEMINI_API_KEY = "<your_api_key>"
-npm run rag:build
-```
-
-This generates `rag/tamu-embeddings.json`.
-
-2) Commit the file so it's available in production:
-
-```powershell
-git add rag/tamu-embeddings.json; git commit -m "Add TAMU RAG embeddings"
-```
-
-3) Deploy to Vercel. The `vercel.json` includes the `rag/**` files in the Serverless Function bundle and ensures a Node runtime (not Edge).
-
-Environment variables in Vercel:
-
-- `GEMINI_API_KEY`: Google AI Studio API key
+Columns written: Timestamp, Company, Contact Name, Contact Email, Website, Partner Types, Message, Source.
 
 Notes:
-
-- The API will fall back gracefully if the embeddings file is missing.
-- For time-sensitive questions (dates, “latest”), the API can also use Google Search.
+- The endpoint is public. Anyone who finds the URL can append rows. Keep the URL out of git.
+- After editing `Code.gs`, re-deploy as a new version or the live URL keeps the old code.

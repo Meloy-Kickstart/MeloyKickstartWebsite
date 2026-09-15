@@ -1,119 +1,138 @@
-import { FaRocket, FaUsers, FaMicrophone, FaLightbulb, FaBriefcase, FaChartLine, FaNetworkWired, FaGraduationCap } from "react-icons/fa";
+import {
+  FaRocket,
+  FaUsers,
+  FaMicrophone,
+  FaLightbulb,
+  FaTrophy,
+  FaGraduationCap,
+} from "react-icons/fa";
 import { motion } from "framer-motion";
+import { Reveal, SplitLines } from "../components/motion";
+import type { ReactNode } from "react";
 
-const offerings = [
+type Offering = {
+  icon: ReactNode;
+  title: string;
+  desc: string;
+  highlight?: boolean;
+};
+
+const offerings: Offering[] = [
+  // Build
   {
-    icon: <FaMicrophone className="text-violet-neon text-3xl" />,
-    title: "Top Startup Speakers",
-    desc: "Network with and learn from successful founders and business leaders who've built real companies.",
+    icon: <FaGraduationCap />,
+    title: "Workshops",
+    desc: "Idea validation, customer discovery, MVPs, pitching.",
     highlight: true,
   },
   {
-    icon: <FaGraduationCap className="text-violet-neon text-3xl" />,
-    title: "Hands-On Workshops",
-    desc: "Master everything from idea validation to customer discovery, MVPs, and pitching — guided by industry experts.",
+    icon: <FaLightbulb />,
+    title: "Demo Nights",
+    desc: "Show what you built. Get feedback.",
+    highlight: true,
+  },
+  // Connect
+  {
+    icon: <FaMicrophone />,
+    title: "Founder Talks",
+    desc: "Learn from people who built real companies.",
     highlight: true,
   },
   {
-    icon: <FaBriefcase className="text-violet-neon text-3xl" />,
-    title: "Startup Job Connections",
-    desc: "Get connected to startups actively looking for talent. Build your network and find opportunities.",
-    highlight: false,
+    icon: <FaUsers />,
+    title: "Co-founders",
+    desc: "Find the people you will build with.",
+  },
+  // Kickstart
+  {
+    icon: <FaTrophy />,
+    title: "Pitch Competitions",
+    desc: "Pitch in front of judges. Win prizes.",
   },
   {
-    icon: <FaChartLine className="text-violet-neon text-3xl" />,
-    title: "Real Case Studies",
-    desc: "Learn from actual startup journeys — the wins, the failures, and everything in between.",
-    highlight: false,
-  },
-  {
-    icon: <FaLightbulb className="text-violet-neon text-3xl" />,
-    title: "Peer Demo Nights",
-    desc: "Showcase what you're building. Get feedback, find collaborators, and inspire others with your work.",
-    highlight: true,
-  },
-  {
-    icon: <FaNetworkWired className="text-violet-neon text-3xl" />,
-    title: "Residency-Style Cohort",
-    desc: "Join an intensive, community-driven program designed to accelerate your startup from concept to launch.",
-    highlight: false,
-  },
-  {
-    icon: <FaUsers className="text-violet-neon text-3xl" />,
-    title: "Ambitious Community",
-    desc: "Surround yourself with like-minded, driven students who are building the future. Find co-founders and lifelong collaborators.",
-    highlight: false,
-  },
-  {
-    icon: <FaRocket className="text-violet-neon text-3xl" />,
-    title: "Meet You Where You Are",
-    desc: "Whether you have a revenue-generating startup or just an interest in entrepreneurship, there's a place for you here.",
-    highlight: false,
+    icon: <FaRocket />,
+    title: "Any Stage",
+    desc: "Curious or already shipping. You fit here.",
   },
 ];
 
 export const About = () => {
   return (
-    <section id="offerings" className="section bg-gradient-to-b from-transparent via-violet-500/5 to-transparent">
-      <div className="text-center max-w-4xl mx-auto mb-12">
-        <h2 className="section-title">What You'll Get</h2>
-        <p className="text-zinc-200/90 mt-6 text-lg md:text-xl">
-          We're not just another club. We're building a complete ecosystem to support 
-          your entrepreneurial journey — from your first idea to your first customer.
-        </p>
-      </div>
+    <section id="offerings" className="section">
+      <div className="wrap">
+        <div className="max-w-3xl">
+          <Reveal as="p" className="eyebrow">
+            What you&rsquo;ll get
+          </Reveal>
+          <SplitLines
+            lines={["Build.", "Connect.", "Kickstart."]}
+            className="display text-display-lg mt-4"
+          />
+        </div>
 
-      <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-6 mt-12">
-        {offerings.map((offering, idx) => (
-          <motion.div
-            key={offering.title}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: idx * 0.05 }}
-            viewport={{ once: true }}
-            className={`card relative overflow-hidden ${
-              offering.highlight ? "border-2 border-violet-neon/30" : ""
-            }`}
-          >
-            {offering.highlight && (
-              <div className="absolute top-0 right-0 bg-violet-neon/20 text-violet-neon text-xs font-bold px-3 py-1 rounded-bl-lg">
-                POPULAR
-              </div>
-            )}
-            <div className="flex items-start gap-4">
+        <div className="mt-12 grid gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3 lg:mt-16">
+          {offerings.map((o, idx) => (
+            <motion.article
+              key={o.title}
+              initial={{ opacity: 0, y: 28 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              whileHover={{ y: -6 }}
+              transition={{ duration: 0.6, delay: (idx % 3) * 0.1, ease: [0.22, 1, 0.36, 1] }}
+              viewport={{ once: true, margin: "-40px" }}
+              className={`card group flex flex-col ${
+                o.highlight ? "border-maroon bg-rose-50" : ""
+              }`}
+            >
+              {o.highlight && (
+                <span className="absolute right-4 top-4 rounded-full bg-maroon px-2.5 py-1 text-[0.6rem] font-semibold uppercase tracking-wider text-cream">
+                  Popular
+                </span>
+              )}
               <div
-                className="neon-ring h-14 w-14 rounded-xl flex items-center justify-center bg-surface-800/60 flex-shrink-0"
+                className="flex h-12 w-12 items-center justify-center rounded-full bg-maroon text-xl text-cream transition-transform duration-500 group-hover:-rotate-12 group-hover:scale-110"
                 aria-hidden
               >
-                {offering.icon}
+                {o.icon}
               </div>
-              <div>
-                <h3 className="font-semibold text-xl mb-2">{offering.title}</h3>
-                <p className="text-zinc-300/90 text-base leading-relaxed">{offering.desc}</p>
-              </div>
-            </div>
-          </motion.div>
-        ))}
-      </div>
+              <h3 className="mt-5 text-lg font-bold leading-snug text-maroon">
+                {o.title}
+              </h3>
+              <p className="mt-2 text-sm leading-relaxed text-ink/75">
+                {o.desc}
+              </p>
+            </motion.article>
+          ))}
+        </div>
 
-      <motion.div 
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.4 }}
-        viewport={{ once: true }}
-        className="mt-16 text-center"
-      >
-        <div className="card max-w-3xl mx-auto bg-gradient-to-br from-violet-500/10 to-pink-500/10 border-2 border-violet-neon/20">
-          <h3 className="text-2xl font-bold mb-4 neon-text">Ready to Start Building?</h3>
-          <p className="text-zinc-300/90 text-lg mb-6">
-            Join a community where ambitious ideas become real companies. No matter where you are 
-            in your journey, we'll help you take the next step.
-          </p>
-          <a href="#join" className="button-primary text-lg px-8 py-3 inline-block">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.96 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+          viewport={{ once: true, margin: "-60px" }}
+          className="relative mt-12 flex flex-col items-start justify-between gap-6 overflow-hidden rounded-2xl bg-maroon p-8 text-cream sm:mt-16 md:flex-row md:items-center lg:p-12"
+        >
+          <motion.span
+            aria-hidden
+            animate={{ scale: [1, 1.15, 1], x: [0, 20, 0] }}
+            transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
+            className="pointer-events-none absolute -right-20 -top-20 h-72 w-72 rounded-full bg-rose/30 blur-2xl"
+          />
+          <div>
+            <h3 className="display text-display-md text-cream">
+              Ready to build?
+            </h3>
+            <p className="mt-3 max-w-xl text-cream/80">
+              Free to join. No experience needed.
+            </p>
+          </div>
+          <a
+            href="#join"
+            className="btn bg-cream text-maroon hover:bg-rose-100 hover:-translate-y-0.5 focus-visible:ring-cream focus-visible:ring-offset-maroon"
+          >
             Join Now
           </a>
-        </div>
-      </motion.div>
+        </motion.div>
+      </div>
     </section>
   );
 };

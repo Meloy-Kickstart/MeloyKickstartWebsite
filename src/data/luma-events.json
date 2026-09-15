@@ -1,0 +1,78 @@
+{
+  "fetchedAt": "2026-09-15T05:07:49.301Z",
+  "upcoming": [],
+  "past": [
+    {
+      "id": "evt-4GbDeZq5j1d9tVl",
+      "name": "Meloy Kickstart Meeting #1 : Absurd Elevator Pitch Workshop",
+      "url": "https://luma.com/jkmjg7jh",
+      "startAt": "2026-09-10T23:00:00.000Z",
+      "timezone": "America/Chicago",
+      "cover": null,
+      "location": "ZACH 415"
+    },
+    {
+      "id": "evt-LjWyYaADxxtx5VM",
+      "name": "Meloy Kickstart: TopGolf Social!",
+      "url": "https://luma.com/rx7si1t2",
+      "startAt": "2026-04-27T23:30:00.000Z",
+      "timezone": "America/Chicago",
+      "cover": null,
+      "location": "400 W Villa Maria Rd"
+    },
+    {
+      "id": "evt-D7XfYpwQlHdLNyN",
+      "name": "Meloy Kickstart x Tango Dating App Case Study",
+      "url": "https://luma.com/cqtxr0yx",
+      "startAt": "2026-02-13T00:30:00.000Z",
+      "timezone": "America/Chicago",
+      "cover": null,
+      "location": null
+    },
+    {
+      "id": "evt-j0Ykji8NdkE6tf8",
+      "name": "Meloy Kickstart: Cofounder Matching!",
+      "url": "https://luma.com/x8qg8bh3",
+      "startAt": "2026-02-06T00:30:00.000Z",
+      "timezone": "America/Chicago",
+      "cover": null,
+      "location": null
+    },
+    {
+      "id": "evt-tp1I0q9LZIJZ2S7",
+      "name": "Meloy Kickstart: Spring Semester Meeting #1",
+      "url": "https://luma.com/3wcm4edf",
+      "startAt": "2026-01-23T00:30:00.000Z",
+      "timezone": "America/Chicago",
+      "cover": null,
+      "location": null
+    },
+    {
+      "id": "evt-oI6zm9y14KwTZi8",
+      "name": "Meloy Kickstart: Vibe Coding Workshop",
+      "url": "https://luma.com/w3t1axwv",
+      "startAt": "2025-11-14T00:30:00.000Z",
+      "timezone": "America/Chicago",
+      "cover": null,
+      "location": null
+    },
+    {
+      "id": "evt-I4GGaeopRykeGaH",
+      "name": "Meloy Kickstart: MVP Workshop",
+      "url": "https://luma.com/1mc1urtj",
+      "startAt": "2025-10-30T23:30:00.000Z",
+      "timezone": "America/Chicago",
+      "cover": null,
+      "location": null
+    },
+    {
+      "id": "evt-pPsGHGlGH0vHLXv",
+      "name": "Meloy Kickstart: Elevator Pitch Workshop",
+      "url": "https://luma.com/8qw2lt4p",
+      "startAt": "2025-10-16T23:30:00.000Z",
+      "timezone": "America/Chicago",
+      "cover": null,
+      "location": null
+    }
+  ]
+}

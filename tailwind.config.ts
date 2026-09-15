@@ -1,60 +1,56 @@
 import type { Config } from 'tailwindcss'
 
 export default {
-  darkMode: 'class',
   content: [
     './index.html',
     './src/**/*.{ts,tsx}',
   ],
   theme: {
+    container: {
+      center: true,
+      padding: {
+        DEFAULT: '1.25rem',
+        sm: '1.5rem',
+        lg: '2.5rem',
+      },
+    },
     extend: {
       colors: {
-        // Texas A&M inspired electric maroon and violet accents
+        // Brand palette pulled from the 2026 exec-team graphics
+        cream: '#faf6f0',
+        ink: '#4a0a18',
         maroon: {
-          600: '#7a0026',
-          700: '#5a001c',
-          neon: '#d40057', // electric maroon glow
+          DEFAULT: '#5c0f1f',
+          600: '#7a1e32',
+          500: '#8c3a4e',
         },
-        violet: {
-          neon: '#9b5cff',
-          600: '#7c3aed',
-        },
-        surface: {
-          900: '#0b0b0f',
-          800: '#111118',
-          700: '#161624',
+        rose: {
+          DEFAULT: '#a64b63',
+          300: '#c98a9b',
+          200: '#e8c9cf',
+          100: '#f1dde1',
+          50: '#f7ecee',
         },
       },
       fontFamily: {
-        sans: ['Space Grotesk', 'system-ui', 'sans-serif'],
-        futuristic: ['Orbitron', 'Space Grotesk', 'system-ui', 'sans-serif']
+        sans: ['Poppins', 'system-ui', 'sans-serif'],
+      },
+      fontSize: {
+        // Fluid display sizes: scale between phone and desktop without breakpoints
+        'display-xl': ['clamp(2.75rem, 9vw, 7rem)', { lineHeight: '0.92', letterSpacing: '-0.03em' }],
+        'display-lg': ['clamp(2.25rem, 6vw, 4.5rem)', { lineHeight: '0.95', letterSpacing: '-0.03em' }],
+        'display-md': ['clamp(1.75rem, 4vw, 3rem)', { lineHeight: '1', letterSpacing: '-0.02em' }],
+      },
+      letterSpacing: {
+        label: '0.28em',
+      },
+      borderWidth: {
+        3: '3px',
       },
       boxShadow: {
-        neon: '0 0 20px rgba(155,92,255,0.45), 0 0 40px rgba(212,0,87,0.25)',
-        innerglass: 'inset 0 1px 0 rgba(255,255,255,0.05), inset 0 -1px 0 rgba(0,0,0,0.35)'
+        frame: '0 0 0 2px #5c0f1f',
+        lift: '0 12px 32px -16px rgba(92, 15, 31, 0.35)',
       },
-      backdropBlur: {
-        xs: '2px'
-      },
-      backgroundImage: {
-        'radial-grid': 'radial-gradient(1000px 600px at 120% -10%, rgba(155,92,255,.15), transparent 60%), radial-gradient(800px 500px at -20% 120%, rgba(212,0,87,.12), transparent 60%)',
-        'glass-gradient': 'linear-gradient(135deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02))'
-      },
-      animation: {
-        'slow-pan': 'slow-pan 25s linear infinite',
-        'pulse-glow': 'pulse-glow 3s ease-in-out infinite'
-      },
-      keyframes: {
-        'slow-pan': {
-          '0%': { backgroundPosition: '0% 0%' },
-          '50%': { backgroundPosition: '100% 50%' },
-          '100%': { backgroundPosition: '0% 0%' }
-        },
-        'pulse-glow': {
-          '0%, 100%': { boxShadow: '0 0 0 rgba(155,92,255,0.2)' },
-          '50%': { boxShadow: '0 0 25px rgba(155,92,255,0.45)' }
-        }
-      }
     },
   },
   plugins: [],

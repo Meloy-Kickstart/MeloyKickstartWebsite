@@ -1,101 +1,168 @@
 import { motion } from "framer-motion";
+import { Reveal, SplitLines } from "../components/motion";
+import raw from "../data/luma-events.json";
 
-type Event = {
-  date: string;
-  title: string;
-  desc: string;
-  featured?: boolean;
+type LumaEvent = {
+  id: string;
+  name: string;
+  url: string;
+  startAt: string;
+  timezone: string;
+  cover: string | null;
+  location: string | null;
+};
+const data = raw as { fetchedAt: string; upcoming: LumaEvent[]; past: LumaEvent[] };
+
+const LUMA_PROFILE = "https://luma.com/user/usr-GjilPA3HrL19yKV";
+const EASE = [0.22, 1, 0.36, 1] as const;
+
+const fmt = (iso: string, tz: string) => {
+  const d = new Date(iso);
+  return {
+    day: d.toLocaleDateString("en-US", { day: "2-digit", timeZone: tz }),
+    month: d.toLocaleDateString("en-US", { month: "short", timeZone: tz }),
+    year: d.toLocaleDateString("en-US", { year: "numeric", timeZone: tz }),
+    time: d.toLocaleTimeString("en-US", {
+      hour: "numeric",
+      minute: "2-digit",
+      timeZone: tz,
+    }),
+  };
 };
 
-const events: Event[] = [
-  {
-    date: "Sep 04",
-    title: "Kickoff!",
-    desc: "Welcome, what we do.",
-  },
-  {
-    date: "Sep 18",
-    title: "Problems Workshop",
-    desc: "Learn how to discover problems worth solving to prevent creating problems for your solution",
-  },
-  {
-    date: "Oct 02",
-    title: "Customer Discovery Workshop",
-    desc: "Learn the most important business skill: how to find customers, what do they want/need?",
-  },
-  {
-    date: "Oct 16",
-    title: "Elevator Pitch Workshop",
-    desc: "Rapid ideation jams and practice pitching in front of a group",
-  },
-  {
-    date: "Oct 30",
-    title: "MVP Workshop",
-    desc: "Prototype fast: product scoping and MVP bootstrapping.",
-  },
-  {
-    date: "Nov 13",
-    title: "Peer Demo Night",
-    desc: "Showcase what you're building, get feedback, and inspire others.",
-    featured: true,
-  },
-];
+// Strip the club name prefix Luma titles carry ("Meloy Kickstart: X" → "X")
+const title = (name: string) =>
+  name.replace(/^meloy kickstart\s*(meeting\s*#\d+)?\s*[:\-–x]\s*/i, "").trim() || name;
 
-const DISCORD =
-  import.meta.env.VITE_DISCORD_INVITE || "https://discord.gg/jK5uQRXfSE";
+const EventCard = ({ e, idx, past }: { e: LumaEvent; idx: number; past?: boolean }) => {
+  const { day, month, year, time } = fmt(e.startAt, e.timezone);
+  return (
+    <motion.a
+      href={e.url}
+      target="_blank"
+      rel="noreferrer"
+      initial={{ opacity: 0, y: 28 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      whileHover={{ y: -6 }}
+      viewport={{ once: true, margin: "-40px" }}
+      transition={{ duration: 0.6, delay: (idx % 4) * 0.08, ease: EASE }}
+      className={`card group flex flex-col overflow-hidden p-0 sm:p-0 ${
+        past ? "" : "border-maroon bg-rose-50"
+      }`}
+    >
+      {e.cover ? (
+        <div className="relative aspect-[16/10] overflow-hidden bg-rose-100">
+          <img
+            src={e.cover}
+            alt=""
+            loading="lazy"
+            decoding="async"
+            className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+          />
+          <div className="display absolute left-3 top-3 rounded-xl bg-cream px-3 py-2 leading-none shadow-lift">
+            <span className="block text-2xl">{day}</span>
+            <span className="block text-[0.6rem] tracking-wider">{month}</span>
+          </div>
+        </div>
+      ) : (
+        <div
+          className={`display flex items-baseline gap-2 px-5 pt-5 leading-none ${
+            past ? "text-maroon/70 group-hover:text-maroon" : "text-maroon"
+          } transition-colors`}
+        >
+          <span className="text-4xl">{day}</span>
+          <span className="text-xs tracking-wider">
+            {month} {past ? year : ""}
+          </span>
+        </div>
+      )}
+      <div className="flex flex-1 flex-col p-5">
+        <h3 className="text-base font-bold leading-snug text-maroon sm:text-lg">
+          {title(e.name)}
+        </h3>
+        <p className="mt-auto pt-3 text-xs uppercase tracking-wider text-ink/60">
+          {time}
+          {e.location ? ` · ${e.location}` : ""}
+        </p>
+      </div>
+    </motion.a>
+  );
+};
 
 export const Events = () => {
+  const upcoming = data.upcoming;
+  const past = data.past.slice(0, 4);
+
   return (
     <section id="events" className="section">
-      <div className="flex items-baseline justify-between gap-6 flex-wrap">
-        <div>
-          <h2 className="section-title">Meetings & Events</h2>
-          <p className="text-zinc-300/90 mt-3 max-w-2xl">
-            Bi-weekly workshops, guest speakers, demo nights, and more. Join us every other week to level up your startup game.
-          </p>
-        </div>
-        <div className="flex gap-3 text-sm">
-          <a href={DISCORD} target="_blank" rel="noreferrer" className="button-primary">
-            Join Discord
-          </a>
-        </div>
-      </div>
-
-      <div className="mt-10 grid md:grid-cols-2 gap-6">
-        {events.map((e, idx) => (
-          <motion.div
-            key={e.title}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: idx * 0.05 }}
-            viewport={{ once: true }}
-            className={`card relative overflow-hidden ${
-              e.featured ? "border-2 border-violet-neon/30" : ""
-            }`}
-          >
-            {e.featured && (
-              <div className="absolute top-0 right-0 bg-violet-neon/20 text-violet-neon text-xs font-bold px-3 py-1 rounded-bl-lg">
-                FEATURED
-              </div>
-            )}
-            <div
-              className="absolute -left-6 top-6 w-24 h-24 rounded-full blur-3xl opacity-20"
-              style={{
-                background:
-                  "radial-gradient(circle, #9b5cff55, transparent 60%)",
-              }}
+      <div className="wrap">
+        <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+          <div className="max-w-2xl">
+            <Reveal as="p" className="eyebrow">
+              Events
+            </Reveal>
+            <SplitLines
+              lines={["Every other", "week"]}
+              className="display text-display-lg mt-4"
             />
-            <div className="flex items-start gap-4">
-              <div className="neon-ring rounded-xl px-3 py-2 bg-surface-800/60 font-futuristic text-violet-neon/90 flex-shrink-0">
-                {e.date}
-              </div>
-              <div>
-                <h3 className="font-semibold text-lg">{e.title}</h3>
-                <p className="text-zinc-300/90 mt-1">{e.desc}</p>
-              </div>
+            <Reveal as="p" delay={0.2} className="lede mt-6">
+              Workshops, speakers, demo nights. RSVP on Luma.
+            </Reveal>
+          </div>
+          <Reveal delay={0.3} className="self-start md:self-auto">
+            <a
+              href={LUMA_PROFILE}
+              target="_blank"
+              rel="noreferrer"
+              className="btn-secondary"
+            >
+              Follow on Luma
+            </a>
+          </Reveal>
+        </div>
+
+        {/* Upcoming */}
+        <Reveal as="p" className="eyebrow mt-12 sm:mt-16">
+          Upcoming
+        </Reveal>
+        {upcoming.length > 0 ? (
+          <div className="mt-5 grid gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
+            {upcoming.map((e, i) => (
+              <EventCard key={e.id} e={e} idx={i} />
+            ))}
+          </div>
+        ) : (
+          <Reveal
+            delay={0.1}
+            className="mt-5 flex flex-col items-start justify-between gap-4 rounded-2xl border-2 border-dashed border-maroon/30 p-6 sm:flex-row sm:items-center sm:p-8"
+          >
+            <p className="text-ink/75">
+              Next event is not posted yet. Follow us on Luma to hear first.
+            </p>
+            <a
+              href={LUMA_PROFILE}
+              target="_blank"
+              rel="noreferrer"
+              className="btn-primary shrink-0"
+            >
+              Follow
+            </a>
+          </Reveal>
+        )}
+
+        {/* Past */}
+        {past.length > 0 && (
+          <>
+            <Reveal as="p" className="eyebrow mt-12 sm:mt-16">
+              Past events
+            </Reveal>
+            <div className="mt-5 grid gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4">
+              {past.map((e, i) => (
+                <EventCard key={e.id} e={e} idx={i} past />
+              ))}
             </div>
-          </motion.div>
-        ))}
+          </>
+        )}
       </div>
     </section>
   );

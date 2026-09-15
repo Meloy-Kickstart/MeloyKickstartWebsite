@@ -3,24 +3,21 @@ import { About } from "./sections/About";
 import { CareerFair } from "./sections/CareerFair";
 import { Events } from "./sections/Events";
 import { Footer } from "./sections/Footer";
-import { ParticlesBackground } from "./components/ParticlesBackground";
 import { Join } from "./sections/Join";
+import { Instagram } from "./sections/Instagram";
 import { Navbar } from "./components/Navbar";
-import { Chat } from "./sections/Chat";
 
 export default function App() {
   return (
-    <div className="bg-surface-900 min-h-screen font-sans">
+    <div className="min-h-screen bg-cream font-sans text-ink">
       <Navbar />
-      <div className="fixed inset-0 -z-10 bg-radial-grid animate-slow-pan [mask-image:radial-gradient(ellipse_at_center,black_55%,transparent_75%)]" />
-      <ParticlesBackground />
       <main>
         <Hero />
+        <Instagram />
         <About />
         <Join />
-        <Chat />
-        <CareerFair />
         <Events />
+        <CareerFair />
       </main>
       <Footer />
     </div>
