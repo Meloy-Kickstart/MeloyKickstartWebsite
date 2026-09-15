@@ -18,7 +18,8 @@ const PARTNER_TYPES = [
 
 // Google Apps Script web app that appends a row to the Partner sheet.
 // See google-apps-script/Code.gs for the endpoint and setup steps.
-const WEBHOOK = import.meta.env.VITE_SHEETS_WEBHOOK_URL;
+// Read at submit time so tests can stub the env after the module loads.
+const webhookUrl = () => import.meta.env.VITE_SHEETS_WEBHOOK_URL;
 
 export const CareerFair = () => {
   const [company, setCompany] = useState("");
@@ -44,7 +45,8 @@ export const CareerFair = () => {
     setError(null);
     if (!valid) return;
 
-    if (!WEBHOOK) {
+    const webhook = webhookUrl();
+    if (!webhook) {
       setError("Form is not connected yet. Email us at meloykickstart@gmail.com.");
       return;
     }
@@ -53,7 +55,7 @@ export const CareerFair = () => {
     try {
       // No Content-Type header: a text/plain body skips the CORS preflight,
       // which Apps Script web apps do not answer.
-      const res = await fetch(WEBHOOK, {
+      const res = await fetch(webhook, {
         method: "POST",
         body: JSON.stringify({
           company,
