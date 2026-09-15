@@ -5,6 +5,7 @@ import { Events } from "./sections/Events";
 import { Footer } from "./sections/Footer";
 import { Join } from "./sections/Join";
 import { Instagram } from "./sections/Instagram";
+import { Photos } from "./sections/Photos";
 import { Navbar } from "./components/Navbar";
 
 export default function App() {
@@ -13,6 +14,7 @@ export default function App() {
       <Navbar />
       <main>
         <Hero />
+        <Photos />
         <Instagram />
         <About />
         <Join />
