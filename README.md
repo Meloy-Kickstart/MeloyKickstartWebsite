@@ -42,6 +42,19 @@ npm run preview
 - Subtle focus and hover effects
 - If you need reduced motion, you can wrap framer-motion animations with prefers-reduced-motion checks as a next step
 
+## Tests & CI
+
+```powershell
+npm run typecheck   # tsc
+npm test            # vitest (jsdom)
+npm run test:watch
+```
+
+- `src/lib/events.test.ts`: Luma title cleanup and date formatting.
+- `src/App.test.tsx`: renders the page; checks nav, hero, events, Instagram embeds, footer links, and the partner form's validation.
+- `.github/workflows/ci.yml` runs typecheck, tests, and build on every push and pull request.
+- Optional GitHub secret `VITE_SHEETS_WEBHOOK_URL` and variable `VITE_DISCORD_INVITE` feed the CI build. They are not needed for tests.
+
 ## Tech
 - React 18, Vite 5, TypeScript 5
 - TailwindCSS 3

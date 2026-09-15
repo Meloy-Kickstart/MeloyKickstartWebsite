@@ -1,0 +1,45 @@
+name: CI
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    name: Typecheck, test, build
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      - name: Typecheck
+        run: npm run typecheck
+
+      - name: Test
+        run: npm test
+
+      # `prebuild` refreshes src/data/luma-events.json from Luma.
+      # If Luma is unreachable the committed snapshot is used.
+      - name: Build
+        run: npm run build
+        env:
+          VITE_SHEETS_WEBHOOK_URL: ${{ secrets.VITE_SHEETS_WEBHOOK_URL }}
+          VITE_DISCORD_INVITE: ${{ vars.VITE_DISCORD_INVITE }}
+
+      - name: Fail if the Luma fetch changed the committed events
+        run: |
+          if ! git diff --quiet -- src/data/luma-events.json; then
+            echo "::warning::src/data/luma-events.json is out of date. Run 'npm run luma' and commit."
+          fi

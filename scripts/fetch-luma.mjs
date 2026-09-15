@@ -42,7 +42,8 @@ try {
   ]);
   upcoming.sort((a, b) => a.startAt.localeCompare(b.startAt));
   past.sort((a, b) => b.startAt.localeCompare(a.startAt));
-  const data = { fetchedAt: new Date().toISOString(), upcoming, past };
+  // No timestamp: the file must only change when the events change
+  const data = { upcoming, past };
   await writeFile(OUT, JSON.stringify(data, null, 2) + "\n");
   console.log(`[luma] ${upcoming.length} upcoming, ${past.length} past → ${path.relative(process.cwd(), OUT)}`);
 } catch (err) {

@@ -1,41 +1,15 @@
 import { motion } from "framer-motion";
 import { Reveal, SplitLines } from "../components/motion";
 import raw from "../data/luma-events.json";
+import { eventTitle, formatEventDate, type LumaEvent } from "../lib/events";
 
-type LumaEvent = {
-  id: string;
-  name: string;
-  url: string;
-  startAt: string;
-  timezone: string;
-  cover: string | null;
-  location: string | null;
-};
-const data = raw as { fetchedAt: string; upcoming: LumaEvent[]; past: LumaEvent[] };
+const data = raw as { upcoming: LumaEvent[]; past: LumaEvent[] };
 
 const LUMA_PROFILE = "https://luma.com/user/usr-GjilPA3HrL19yKV";
 const EASE = [0.22, 1, 0.36, 1] as const;
 
-const fmt = (iso: string, tz: string) => {
-  const d = new Date(iso);
-  return {
-    day: d.toLocaleDateString("en-US", { day: "2-digit", timeZone: tz }),
-    month: d.toLocaleDateString("en-US", { month: "short", timeZone: tz }),
-    year: d.toLocaleDateString("en-US", { year: "numeric", timeZone: tz }),
-    time: d.toLocaleTimeString("en-US", {
-      hour: "numeric",
-      minute: "2-digit",
-      timeZone: tz,
-    }),
-  };
-};
-
-// Strip the club name prefix Luma titles carry ("Meloy Kickstart: X" → "X")
-const title = (name: string) =>
-  name.replace(/^meloy kickstart\s*(meeting\s*#\d+)?\s*[:\-–x]\s*/i, "").trim() || name;
-
 const EventCard = ({ e, idx, past }: { e: LumaEvent; idx: number; past?: boolean }) => {
-  const { day, month, year, time } = fmt(e.startAt, e.timezone);
+  const { day, month, year, time } = formatEventDate(e.startAt, e.timezone);
   return (
     <motion.a
       href={e.url}
@@ -78,7 +52,7 @@ const EventCard = ({ e, idx, past }: { e: LumaEvent; idx: number; past?: boolean
       )}
       <div className="flex flex-1 flex-col p-5">
         <h3 className="text-base font-bold leading-snug text-maroon sm:text-lg">
-          {title(e.name)}
+          {eventTitle(e.name)}
         </h3>
         <p className="mt-auto pt-3 text-xs uppercase tracking-wider text-ink/60">
           {time}
