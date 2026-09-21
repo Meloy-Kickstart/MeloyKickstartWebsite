@@ -1,5 +1,15 @@
 {
-  "upcoming": [],
+  "upcoming": [
+    {
+      "id": "evt-I6OJZsHd4g8A8lf",
+      "name": "Meloy Kickstart Meeting #2: Problem Discovery Workshop",
+      "url": "https://luma.com/dnfw9dwa",
+      "startAt": "2026-09-24T23:00:00.000Z",
+      "timezone": "America/Chicago",
+      "cover": null,
+      "location": "ZACH 415"
+    }
+  ],
   "past": [
     {
       "id": "evt-4GbDeZq5j1d9tVl",

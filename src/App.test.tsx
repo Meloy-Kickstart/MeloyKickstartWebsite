@@ -27,8 +27,8 @@ describe("landing page", () => {
     expect(screen.getByRole("heading", { level: 1 })).toHaveTextContent(/your startup/i);
   });
 
-  it("shows at most four past events with Luma links", () => {
-    const expected = Math.min(4, luma.past.length);
+  it("shows every upcoming event and at most four past events with Luma links", () => {
+    const expected = luma.upcoming.length + Math.min(4, luma.past.length);
     const cards = screen.getAllByRole("link", { name: /pm/i }).filter((a) =>
       a.getAttribute("href")?.startsWith("https://luma.com/")
     );

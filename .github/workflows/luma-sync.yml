@@ -1,0 +1,44 @@
+name: Luma sync
+
+# Refreshes src/data/luma-events.json from Luma and commits the result.
+# A push to main triggers a Vercel deploy, so new or edited Luma events
+# reach the live site without anyone opening the repo.
+on:
+  schedule:
+    - cron: "0 */6 * * *" # every 6 hours (UTC)
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: luma-sync
+  cancel-in-progress: true
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Fetch events
+        run: node scripts/fetch-luma.mjs
+
+      - name: Commit if changed
+        run: |
+          if git diff --quiet -- src/data/luma-events.json; then
+            echo "Events unchanged"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src/data/luma-events.json
+          git commit -m "Sync Luma events"
+          git push origin main
