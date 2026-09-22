@@ -1,20 +1,62 @@
 {
   "posts": [
     {
+      "id": "18460472017186259",
+      "permalink": "https://www.instagram.com/p/Ddhe9ZrD8Jm/",
+      "mediaType": "IMAGE",
+      "mediaUrl": "https://scontent-sea5-1.cdninstagram.com/v/t51.82787-15/818010932_17906834730474975_3345629666583880295_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=102&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiRkVFRC5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=l6di8da95VAQ7kNvwGaporN&_nc_oc=Adp1__wRHhn2nKgDXaA5J816l75c5LrDpu90eScHjZoWUEIbRlRxhC8K1-5yJpzIPYU&_nc_zt=23&_nc_ht=scontent-sea5-1.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=q84Cw9Yxj7YBEKjIf-AGMg&_nc_tpa=Q5bMBQJ_5locfK9quflGowcH5oWpbsgh4oSPTPlLnND7UrRlYfGcVOIP6htA6HUR-z2gB3lQosY5_jmQvw&oh=00_AQJvSLxq1INRtVDj6NoxZV_RrlY714XaivJU3Djh167_JA&oe=6AB78DB9",
+      "sizes": {
+        "medium": {
+          "width": 560,
+          "height": 700,
+          "mediaUrl": "https://behold.pictures/eyJ1IjoiRlRVRHNaeldBMGFJYW5maEplRkx6cmVVbUhyMiIsImYiOiI4bGJ6aEs3ZXJMZVVDV2VPMjdkOCIsInAiOiIxODQ2MDQ3MjAxNzE4NjI1OSIsImgiOiIxN3Y1Mnl5In0.jpg?class=originalMedium"
+        },
+        "large": {
+          "width": 800,
+          "height": 1000,
+          "mediaUrl": "https://behold.pictures/eyJ1IjoiRlRVRHNaeldBMGFJYW5maEplRkx6cmVVbUhyMiIsImYiOiI4bGJ6aEs3ZXJMZVVDV2VPMjdkOCIsInAiOiIxODQ2MDQ3MjAxNzE4NjI1OSIsImgiOiIxN3Y1Mnl5In0.jpg?class=originalLarge"
+        }
+      },
+      "prunedCaption": "Here are the details of our next Kickstart meeting, on Thursday September 24!🔥\nWe look forward to seeing you all there!😊",
+      "caption": "Here are the details of our next Kickstart meeting, on Thursday September 24!🔥\nWe look forward to seeing you all there!😊",
+      "timestamp": "2026-09-20T20:50:35+0000"
+    },
+    {
+      "id": "18127783435793060",
+      "permalink": "https://www.instagram.com/p/DdheXKmjyG3/",
+      "mediaType": "CAROUSEL_ALBUM",
+      "mediaUrl": "https://scontent-sea5-1.cdninstagram.com/v/t51.82787-15/817789425_17906833923474975_9155177300862592153_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=110&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0FST1VTRUxfSVRFTS5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=gJqYyqynfBIQ7kNvwH5IXB2&_nc_oc=Adp4AGnIrsn2_x5M4AjFhwJisE9KzyWEE92tfMZDHtqnbduMIiDApuLb7VhGmmSF4rs&_nc_zt=23&_nc_ht=scontent-sea5-1.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=q84Cw9Yxj7YBEKjIf-AGMg&_nc_tpa=Q5bMBQKLOQNQauebOTH4ZKLsj-s1dvjbXdnPvVvwp7dpAUeK87aPV05MOVO7502D9X6xbKCNG514hfxQsw&oh=00_AQLJyn-x4YpuPF8ofGky4vDw9Kd0M-pcydep5ofGj-J8oQ&oe=6AB78869",
+      "sizes": {
+        "medium": {
+          "width": 560,
+          "height": 700,
+          "mediaUrl": "https://behold.pictures/eyJ1IjoiRlRVRHNaeldBMGFJYW5maEplRkx6cmVVbUhyMiIsImYiOiI4bGJ6aEs3ZXJMZVVDV2VPMjdkOCIsInAiOiIxODEyNzc4MzQzNTc5MzA2MCIsImgiOiIxeTN2ZjFvIn0.jpg?class=originalMedium"
+        },
+        "large": {
+          "width": 800,
+          "height": 1000,
+          "mediaUrl": "https://behold.pictures/eyJ1IjoiRlRVRHNaeldBMGFJYW5maEplRkx6cmVVbUhyMiIsImYiOiI4bGJ6aEs3ZXJMZVVDV2VPMjdkOCIsInAiOiIxODEyNzc4MzQzNTc5MzA2MCIsImgiOiIxeTN2ZjFvIn0.jpg?class=originalLarge"
+        }
+      },
+      "prunedCaption": "Here is a recap of our first General Meeting! It was so fun to watch everyone's creative pitches, and congrats to our winners! 🎉\nWe hope to see you all in our next meeting this week on Thursday for even more fun! 🤭",
+      "caption": "Here is a recap of our first General Meeting! It was so fun to watch everyone's creative pitches, and congrats to our winners! 🎉\nWe hope to see you all in our next meeting this week on Thursday for even more fun! 🤭",
+      "timestamp": "2026-09-20T20:45:22+0000"
+    },
+    {
       "id": "18442094275135430",
       "permalink": "https://www.instagram.com/p/DdFisVumlLF/",
       "mediaType": "CAROUSEL_ALBUM",
-      "mediaUrl": "https://scontent-dfw5-2.cdninstagram.com/v/t51.82787-15/801963063_17905372842474975_328277136598527437_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=107&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0FST1VTRUxfSVRFTS5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=P1umwzEGGA8Q7kNvwE3CiG8&_nc_oc=AdrGHpgzflVS1Rx4ApzFi-Mk3PS_A3qlnqw_voVwnblisMltX3dlt9q-oi91pJo8xqU&_nc_zt=23&_nc_ht=scontent-dfw5-2.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=JsM5RzchdGQ4yOEt2QQ0ZA&_nc_tpa=Q5bMBQKSFNXFau-ecbYiBKVJu9O26c9IPPhwbTfLCIv7FxYlioZa0tmSUclJ1VOYyHXy5Op2v2uuaoTbEg&oh=00_AQKrOEWOYaA_Nz7g2aFdsEH12imATdwyJtS30fF_imjc1Q&oe=6AAF3B71",
+      "mediaUrl": "https://scontent-sea5-1.cdninstagram.com/v/t51.82787-15/801963063_17905372842474975_328277136598527437_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=107&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0FST1VTRUxfSVRFTS5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=8IjbN4WSb88Q7kNvwF_kTVl&_nc_oc=AdrMIa9jF5XDLjacUHgm6joLdPzzDLr6q0IqZq2VpJqmKgFzx4uGrpOcNH802i8b_J4&_nc_zt=23&_nc_ht=scontent-sea5-1.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=a56_f93iU4Het54hGW6tQA&_nc_tpa=Q5bMBQK3AYCBlWU3MUDgrnsaz-OmKVewBAXjSVzF73JPumDqweSBtrOwCceCqiU4SJnSFJBoW1cDd0EHSw&oh=00_AQJd5e0BcrGiYmQDG1j_nz7SB8gAzAKYrVm5l0v5Nljssw&oe=6AB4F1F1",
       "sizes": {
         "medium": {
           "width": 700,
           "height": 699,
-          "mediaUrl": "https://behold.pictures/eyJ1IjoiRlRVRHNaeldBMGFJYW5maEplRkx6cmVVbUhyMiIsImYiOiI4bGJ6aEs3ZXJMZVVDV2VPMjdkOCIsInAiOiIxODQ0MjA5NDI3NTEzNTQzMCIsImgiOiIxMW5kMzB2In0.jpg?class=originalMedium"
+          "mediaUrl": "https://behold.pictures/eyJ1IjoiRlRVRHNaeldBMGFJYW5maEplRkx6cmVVbUhyMiIsImYiOiI4bGJ6aEs3ZXJMZVVDV2VPMjdkOCIsInAiOiIxODQ0MjA5NDI3NTEzNTQzMCIsImgiOiIxdDd1c3NsIn0.jpg?class=originalMedium"
         },
         "large": {
           "width": 1000,
           "height": 999,
-          "mediaUrl": "https://behold.pictures/eyJ1IjoiRlRVRHNaeldBMGFJYW5maEplRkx6cmVVbUhyMiIsImYiOiI4bGJ6aEs3ZXJMZVVDV2VPMjdkOCIsInAiOiIxODQ0MjA5NDI3NTEzNTQzMCIsImgiOiIxMW5kMzB2In0.jpg?class=originalLarge"
+          "mediaUrl": "https://behold.pictures/eyJ1IjoiRlRVRHNaeldBMGFJYW5maEplRkx6cmVVbUhyMiIsImYiOiI4bGJ6aEs3ZXJMZVVDV2VPMjdkOCIsInAiOiIxODQ0MjA5NDI3NTEzNTQzMCIsImgiOiIxdDd1c3NsIn0.jpg?class=originalLarge"
         }
       },
       "prunedCaption": "Kickstart Leadership 26-27\nWe are so excited for this amazing year!!",
@@ -25,17 +67,17 @@
       "id": "18045278468628602",
       "permalink": "https://www.instagram.com/p/DdEVqeVxz0-/",
       "mediaType": "IMAGE",
-      "mediaUrl": "https://scontent-dfw6-2.cdninstagram.com/v/t51.82787-15/801009426_17905290324474975_8526728031871212784_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=109&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiRkVFRC5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=hZ0zlpPnwL8Q7kNvwFSqMx4&_nc_oc=AdqH0emQu40jPTHLp1MNoIAlb6vQPUNCRnuCftG007mp0Ugkt3GrCmHJ_Gqp89yXY14&_nc_zt=23&_nc_ht=scontent-dfw6-2.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=JsM5RzchdGQ4yOEt2QQ0ZA&_nc_tpa=Q5bMBQKmAkCWduXrJ3dyOqbZtDlao4Rff4uE0JrHnkgU3ZC0YQHd1bXAWb5230vq5Qv3pgrYDwdPGXNJ3Q&oh=00_AQKPqazzxGrn0OWJafrHm1Ku-eUXJO5k6wa4yjyEyEHNlw&oe=6AAF4831",
+      "mediaUrl": "https://scontent-sea5-1.cdninstagram.com/v/t51.82787-15/801009426_17905290324474975_8526728031871212784_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=109&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiRkVFRC5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=6FeviKZoF7kQ7kNvwHA3O7t&_nc_oc=Ado63NppeubSWj5YUt-7nM0R-J4lE9e67iQQfAc1wwaJzH1P6YBquAdn9q9aSCShBJg&_nc_zt=23&_nc_ht=scontent-sea5-1.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=a56_f93iU4Het54hGW6tQA&_nc_tpa=Q5bMBQJPD6mPfURhUM7WmJscFhKRWISIN5dxauljXt_KK4ZzP9ffEyuBVFcb7XVHUMEpVvm_UeAc6xK2eg&oh=00_AQKJfXHWcLCYlQIyk8rkUUV4Fo2YeiuWZxuhOGGL1tAuEg&oe=6AB4FEB1",
       "sizes": {
         "medium": {
           "width": 700,
           "height": 509,
-          "mediaUrl": "https://behold.pictures/eyJ1IjoiRlRVRHNaeldBMGFJYW5maEplRkx6cmVVbUhyMiIsImYiOiI4bGJ6aEs3ZXJMZVVDV2VPMjdkOCIsInAiOiIxODA0NTI3ODQ2ODYyODYwMiIsImgiOiIxb2FzMm92In0.jpg?class=originalMedium"
+          "mediaUrl": "https://behold.pictures/eyJ1IjoiRlRVRHNaeldBMGFJYW5maEplRkx6cmVVbUhyMiIsImYiOiI4bGJ6aEs3ZXJMZVVDV2VPMjdkOCIsInAiOiIxODA0NTI3ODQ2ODYyODYwMiIsImgiOiIxMnIybzF2In0.jpg?class=originalMedium"
         },
         "large": {
           "width": 1000,
           "height": 728,
-          "mediaUrl": "https://behold.pictures/eyJ1IjoiRlRVRHNaeldBMGFJYW5maEplRkx6cmVVbUhyMiIsImYiOiI4bGJ6aEs3ZXJMZVVDV2VPMjdkOCIsInAiOiIxODA0NTI3ODQ2ODYyODYwMiIsImgiOiIxb2FzMm92In0.jpg?class=originalLarge"
+          "mediaUrl": "https://behold.pictures/eyJ1IjoiRlRVRHNaeldBMGFJYW5maEplRkx6cmVVbUhyMiIsImYiOiI4bGJ6aEs3ZXJMZVVDV2VPMjdkOCIsInAiOiIxODA0NTI3ODQ2ODYyODYwMiIsImgiOiIxMnIybzF2In0.jpg?class=originalLarge"
         }
       },
       "prunedCaption": "TODAY!! We’ll be outside ZACH from 9-2!! Pull up, give us a quick pitch, and enter for a chance to win $100!\n\nSee you there! 👀",
@@ -46,17 +88,17 @@
       "id": "18113059739064478",
       "permalink": "https://www.instagram.com/p/DdC9ra2IpcM/",
       "mediaType": "IMAGE",
-      "mediaUrl": "https://scontent-dfw5-1.cdninstagram.com/v/t51.82787-15/801275254_17905222029474975_8384555731209246468_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=105&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiRkVFRC5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=tfApHHNDt6kQ7kNvwHWGzXP&_nc_oc=AdqdPHV0h-UG8AaIrp5zyJNNZOsQi8_bjame_OEEQbDMvuwjM2XliLQ11IYtt41CwkU&_nc_zt=23&_nc_ht=scontent-dfw5-1.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=JsM5RzchdGQ4yOEt2QQ0ZA&_nc_tpa=Q5bMBQKQQii5fc69nXXyfHz9wfGzhsH8vCG-4Nom1DzUetrlYbKlyXbLDQofwCoyKL5_3FKNCj7yJnAA6w&oh=00_AQIZ_jgo3QdsqgQWlPdbnSeBfXSIdp0qpzrGQkKN6hyCEw&oe=6AAF2928",
+      "mediaUrl": "https://scontent-sea5-1.cdninstagram.com/v/t51.82787-15/801275254_17905222029474975_8384555731209246468_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=105&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiRkVFRC5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=bhzy2eDK2A8Q7kNvwEhsj8d&_nc_oc=AdqLK_-2W1jMmgvQKV1-tWP9oLxUm0Thah_9mvOIKwIkTCa49T8REjnzicrQuwJca3Y&_nc_zt=23&_nc_ht=scontent-sea5-1.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=a56_f93iU4Het54hGW6tQA&_nc_tpa=Q5bMBQKvTdw5ckLqALjOHJRIkjQ_IBEDmkcGEHf6PTYwxsRm1tJEVigxkcXHWUpUyYnbIXUltzJgg0Bdyw&oh=00_AQJ-Pkq7E0AM0jaXSvEWoYUFz2nl8HPG5mpFcGsAnYg3mQ&oe=6AB517E8",
       "sizes": {
         "medium": {
           "width": 561,
           "height": 700,
-          "mediaUrl": "https://behold.pictures/eyJ1IjoiRlRVRHNaeldBMGFJYW5maEplRkx6cmVVbUhyMiIsImYiOiI4bGJ6aEs3ZXJMZVVDV2VPMjdkOCIsInAiOiIxODExMzA1OTczOTA2NDQ3OCIsImgiOiIxNjRqY2hkIn0.jpg?class=originalMedium"
+          "mediaUrl": "https://behold.pictures/eyJ1IjoiRlRVRHNaeldBMGFJYW5maEplRkx6cmVVbUhyMiIsImYiOiI4bGJ6aEs3ZXJMZVVDV2VPMjdkOCIsInAiOiIxODExMzA1OTczOTA2NDQ3OCIsImgiOiJucWVid2gifQ.jpg?class=originalMedium"
         },
         "large": {
           "width": 802,
           "height": 1000,
-          "mediaUrl": "https://behold.pictures/eyJ1IjoiRlRVRHNaeldBMGFJYW5maEplRkx6cmVVbUhyMiIsImYiOiI4bGJ6aEs3ZXJMZVVDV2VPMjdkOCIsInAiOiIxODExMzA1OTczOTA2NDQ3OCIsImgiOiIxNjRqY2hkIn0.jpg?class=originalLarge"
+          "mediaUrl": "https://behold.pictures/eyJ1IjoiRlRVRHNaeldBMGFJYW5maEplRkx6cmVVbUhyMiIsImYiOiI4bGJ6aEs3ZXJMZVVDV2VPMjdkOCIsInAiOiIxODExMzA1OTczOTA2NDQ3OCIsImgiOiJucWVid2gifQ.jpg?class=originalLarge"
         }
       },
       "prunedCaption": "We are SO excited to kickoff this year with our FIRST MEETING!! Come join us at ZACH415 this THURSDAY 6pm\n\nRSVP LINK IN BIO",
@@ -67,64 +109,22 @@
       "id": "17997165731765357",
       "permalink": "https://www.instagram.com/p/DXX1kxWDT4e/",
       "mediaType": "IMAGE",
-      "mediaUrl": "https://scontent-dfw5-2.cdninstagram.com/v/t51.82787-15/670653888_17885595999474975_4042412700731937477_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=107&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiRkVFRC5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=cNYoomFE5jsQ7kNvwG9vMm1&_nc_oc=AdqOZn82xxD-e7gaJdM5FgxGJMup_8KwvoEGnEYW2K6iF1dCu4YcyBX6D3tWF74xzIs&_nc_zt=23&_nc_ht=scontent-dfw5-2.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=JsM5RzchdGQ4yOEt2QQ0ZA&_nc_tpa=Q5bMBQLTOC4EPxdx9VXxOtb_jjH3fyD7izRJF3-QnzGe9RZiwWzdpcjGsrYEAaED7rSnwIKzTwo29lWD6A&oh=00_AQKOn3Cdai9tdPFSjqDyXl8OaChyWfvauJqEuklszgzZBQ&oe=6AAF1592",
+      "mediaUrl": "https://scontent-sea5-1.cdninstagram.com/v/t51.82787-15/670653888_17885595999474975_4042412700731937477_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=107&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiRkVFRC5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=N6GjTYW9kOMQ7kNvwG3m3Hk&_nc_oc=Ado_uR1af8eB6V0rM0lbkCRuKpcg-J5R2CCsBO9imdUilsaLVlIRiB3GEP3QZxeZkII&_nc_zt=23&_nc_ht=scontent-sea5-1.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=a56_f93iU4Het54hGW6tQA&_nc_tpa=Q5bMBQK2T7p6EkFZY8Z0FCknI0AsYe7r3UEXJaG_Aw1QYze7tTEDT7TRBtLYUVWQd0-26grer5NcESi0GA&oh=00_AQJRbMVlHxgW2mUjejZZ_uv4QjjUoQUx5zfaguOImthrtA&oe=6AB50452",
       "sizes": {
         "medium": {
           "width": 700,
           "height": 700,
-          "mediaUrl": "https://behold.pictures/eyJ1IjoiRlRVRHNaeldBMGFJYW5maEplRkx6cmVVbUhyMiIsImYiOiI4bGJ6aEs3ZXJMZVVDV2VPMjdkOCIsInAiOiIxNzk5NzE2NTczMTc2NTM1NyIsImgiOiIxeW5xazgxIn0.jpg?class=originalMedium"
+          "mediaUrl": "https://behold.pictures/eyJ1IjoiRlRVRHNaeldBMGFJYW5maEplRkx6cmVVbUhyMiIsImYiOiI4bGJ6aEs3ZXJMZVVDV2VPMjdkOCIsInAiOiIxNzk5NzE2NTczMTc2NTM1NyIsImgiOiJ0dW1nOWIifQ.jpg?class=originalMedium"
         },
         "large": {
           "width": 1000,
           "height": 1000,
-          "mediaUrl": "https://behold.pictures/eyJ1IjoiRlRVRHNaeldBMGFJYW5maEplRkx6cmVVbUhyMiIsImYiOiI4bGJ6aEs3ZXJMZVVDV2VPMjdkOCIsInAiOiIxNzk5NzE2NTczMTc2NTM1NyIsImgiOiIxeW5xazgxIn0.jpg?class=originalLarge"
+          "mediaUrl": "https://behold.pictures/eyJ1IjoiRlRVRHNaeldBMGFJYW5maEplRkx6cmVVbUhyMiIsImYiOiI4bGJ6aEs3ZXJMZVVDV2VPMjdkOCIsInAiOiIxNzk5NzE2NTczMTc2NTM1NyIsImgiOiJ0dW1nOWIifQ.jpg?class=originalLarge"
         }
       },
       "prunedCaption": "Come join us for our final event of the semester! We are so excited to wrap up an amazing year together at TopGolf!\n\nWHEN? Monday, April 27 @6:30 PM\nWHO? Have you attended at least one Kickstart Meeting? If so, please RSVP!! This is for YOU.\nFor more details, RSVP: tx.ag/MeloyKickstart or the link in bio!",
       "caption": "Come join us for our final event of the semester! We are so excited to wrap up an amazing year together at TopGolf!\n\nWHEN? Monday, April 27 @6:30 PM\nWHO? Have you attended at least one Kickstart Meeting? If so, please RSVP!! This is for YOU.\nFor more details, RSVP: tx.ag/MeloyKickstart or the link in bio!",
       "timestamp": "2026-04-20T23:49:33+0000"
-    },
-    {
-      "id": "17862830505670521",
-      "permalink": "https://www.instagram.com/p/DWjkXm5kR-2/",
-      "mediaType": "IMAGE",
-      "mediaUrl": "https://scontent-dfw5-2.cdninstagram.com/v/t51.82787-15/658013440_17882996556474975_3663658709019803639_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=100&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiRkVFRC5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=z_pGWYOAbe4Q7kNvwGJq45h&_nc_oc=Adq-k3RqUKYKZ7jJl7PUvGgn40JAH9AA2AhrhoriPQIDATHhCueqNRlav2G1X7kxNvE&_nc_zt=23&_nc_ht=scontent-dfw5-2.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=JsM5RzchdGQ4yOEt2QQ0ZA&_nc_tpa=Q5bMBQJS0U7yG6w87oYm-ukdRFpWbh_l6Pl-iG_maZwDFBRKQ3lyDDWdQOF-n5YYHRAeFcRXtDUb4G4LuQ&oh=00_AQJN4hMvPVf27qlYtUMdHiFWzYw8jLp-c7HS8W4nr1C28w&oe=6AAF36B2",
-      "sizes": {
-        "medium": {
-          "width": 548,
-          "height": 700,
-          "mediaUrl": "https://behold.pictures/eyJ1IjoiRlRVRHNaeldBMGFJYW5maEplRkx6cmVVbUhyMiIsImYiOiI4bGJ6aEs3ZXJMZVVDV2VPMjdkOCIsInAiOiIxNzg2MjgzMDUwNTY3MDUyMSIsImgiOiJ5d2Z4bzgifQ.jpg?class=originalMedium"
-        },
-        "large": {
-          "width": 783,
-          "height": 1000,
-          "mediaUrl": "https://behold.pictures/eyJ1IjoiRlRVRHNaeldBMGFJYW5maEplRkx6cmVVbUhyMiIsImYiOiI4bGJ6aEs3ZXJMZVVDV2VPMjdkOCIsInAiOiIxNzg2MjgzMDUwNTY3MDUyMSIsImgiOiJ5d2Z4bzgifQ.jpg?class=originalLarge"
-        }
-      },
-      "prunedCaption": "Meloy Kickstart is so excited to host Steve Blank on a virtual Fireside Chat + Q&A THIS THURSDAY!\n\nSteve Blank is one of the biggest names in entrepreneurship. He created Customer Development, helped shape the Lean Startup movement, and has taught thousands of founders how to turn ideas into real companies.\n\n​He’s a Stanford professor, serial entrepreneur, and the author of The Four Steps to the Epiphany, a book that changed how startups are built.\n\n​This is YOUR chance to hear from someone who has influenced how modern startups are built: how founders find real opportunities, avoid building the wrong thing, and scale smarter from day one.\n\n​You do NOT need a startup idea.\n\n​Just show up curious.\n\n​Thursday, April 2 @ 6:15 PM\n\n​Zachry Chevron Rooms 2nd floor\n\n​RSVP by Wednesday @ 6 PM for free pizza 🍕 LINK IN BIO\nQuestions? Join our discord: link in bio",
-      "caption": "Meloy Kickstart is so excited to host Steve Blank on a virtual Fireside Chat + Q&A THIS THURSDAY! \n\nSteve Blank is one of the biggest names in entrepreneurship. He created Customer Development, helped shape the Lean Startup movement, and has taught thousands of founders how to turn ideas into real companies.\n\n​He’s a Stanford professor, serial entrepreneur, and the author of The Four Steps to the Epiphany, a book that changed how startups are built.\n\n​This is YOUR chance to hear from someone who has influenced how modern startups are built: how founders find real opportunities, avoid building the wrong thing, and scale smarter from day one.\n\n​You do NOT need a startup idea.\n\n​Just show up curious.\n\n​Thursday, April 2 @ 6:15 PM\n\n​Zachry Chevron Rooms 2nd floor\n\n​RSVP by Wednesday @ 6 PM for free pizza 🍕 LINK IN BIO\nQuestions? Join our discord: link in bio",
-      "timestamp": "2026-03-31T16:38:40+0000"
-    },
-    {
-      "id": "18003323384886138",
-      "permalink": "https://www.instagram.com/p/DWUC9QMjUnz/",
-      "mediaType": "IMAGE",
-      "mediaUrl": "https://scontent-dfw6-2.cdninstagram.com/v/t51.82787-15/656004123_17882155989474975_2269724785983588371_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=109&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiRkVFRC5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=n0hbJnN8CUoQ7kNvwHCUSpB&_nc_oc=AdovJ-pme-2OJzM3g78bgFnduMTl1K4udmD6mvAftyA3x2iS9iuXXKhYDTBwG_fsWds&_nc_zt=23&_nc_ht=scontent-dfw6-2.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=JsM5RzchdGQ4yOEt2QQ0ZA&_nc_tpa=Q5bMBQIj9PBHMgyd4biL_sSKpwXgTqXuFibYyjoHKrAYOSxuq0Tl2Vi0Q44V-vt17j2lk-8VIByc7mh62g&oh=00_AQJbAq9jUzYQ0V1eRCc9dip_UPzxltBW1IZCnFInEPe43w&oe=6AAF22F8",
-      "sizes": {
-        "medium": {
-          "width": 700,
-          "height": 525,
-          "mediaUrl": "https://behold.pictures/eyJ1IjoiRlRVRHNaeldBMGFJYW5maEplRkx6cmVVbUhyMiIsImYiOiI4bGJ6aEs3ZXJMZVVDV2VPMjdkOCIsInAiOiIxODAwMzMyMzM4NDg4NjEzOCIsImgiOiIxMDU2N2xoIn0.jpg?class=originalMedium"
-        },
-        "large": {
-          "width": 1000,
-          "height": 750,
-          "mediaUrl": "https://behold.pictures/eyJ1IjoiRlRVRHNaeldBMGFJYW5maEplRkx6cmVVbUhyMiIsImYiOiI4bGJ6aEs3ZXJMZVVDV2VPMjdkOCIsInAiOiIxODAwMzMyMzM4NDg4NjEzOCIsImgiOiIxMDU2N2xoIn0.jpg?class=originalLarge"
-        }
-      },
-      "prunedCaption": "Howdy! Pitch your business idea in 60 seconds and win $100. Super quick, super easy. Meloy Kickstart, outside Zach. Come by. We will be here till 5PM!!",
-      "caption": "Howdy! Pitch your business idea in 60 seconds and win $100. Super quick, super easy. Meloy Kickstart, outside Zach. Come by. We will be here till 5PM!!",
-      "timestamp": "2026-03-25T15:56:31+0000"
     }
   ]
 }

@@ -96,7 +96,7 @@ Live links:
 How it works:
 - `scripts/fetch-instagram.mjs` snapshots the feed into `src/data/instagram-posts.json` before every build (`npm run instagram` to refresh by hand).
 - The browser then fetches the live feed on load. If that fails, the snapshot shows.
-- `VITE_INSTAGRAM_FEED_URL` holds the feed URL. Set it in `.env`, GitHub (variable), and Vercel.
+- The Meloy Kickstart feed is the built-in default, so it refreshes in local, CI, and Vercel builds without extra configuration. `VITE_INSTAGRAM_FEED_URL` is only needed to override it if the club changes Behold feeds.
 
 Notes:
 - Instagram must stay a professional account (Business or Creator). Behold requires it.

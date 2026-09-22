@@ -1,5 +1,4 @@
 import { Hero } from "./sections/Hero";
-import { About } from "./sections/About";
 import { CareerFair } from "./sections/CareerFair";
 import { Events } from "./sections/Events";
 import { Footer } from "./sections/Footer";
@@ -14,12 +13,9 @@ export default function App() {
       <Navbar />
       <main>
         <Hero />
-        <Events />
-        <Photos />
         <Instagram />
-        <About />
-        <Join />
-        <CareerFair />
+        <Photos />
+        {/* <Join /> */}
       </main>
       <Footer />
     </div>

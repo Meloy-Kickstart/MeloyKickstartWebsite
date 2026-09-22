@@ -89,7 +89,7 @@ export const Photos = () => {
       id="photos"
       aria-roledescription="carousel"
       aria-label="Event photos"
-      className="relative py-10 sm:py-14"
+      className="photo-surface relative py-12 sm:py-16"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
       onFocus={() => setPaused(true)}

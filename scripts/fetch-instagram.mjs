@@ -8,13 +8,11 @@
 import { writeFile } from "fs/promises";
 import path from "path";
 
-const FEED_URL = process.env.VITE_INSTAGRAM_FEED_URL;
+// The public Behold feed connected to @meloykickstart. An environment value
+// can override it if the club ever replaces its Behold feed.
+const DEFAULT_FEED_URL = "https://feeds.behold.so/8lbzhK7erLeUCWeO27d8";
+const FEED_URL = process.env.VITE_INSTAGRAM_FEED_URL || DEFAULT_FEED_URL;
 const OUT = path.join(process.cwd(), "src", "data", "instagram-posts.json");
-
-if (!FEED_URL) {
-  console.warn("[instagram] VITE_INSTAGRAM_FEED_URL not set, keeping existing JSON");
-  process.exit(0);
-}
 
 try {
   const res = await fetch(FEED_URL, { signal: AbortSignal.timeout(10000) });

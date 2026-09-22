@@ -1,8 +1,14 @@
 export const INSTAGRAM_HANDLE = "meloykickstart";
 export const POST_COUNT = 3;
 
-/** Behold JSON feed URL (https://feeds.behold.so/<feedId>). Empty = not set up. */
-export const FEED_URL = import.meta.env.VITE_INSTAGRAM_FEED_URL ?? "";
+/**
+ * Public Behold feed connected to @meloykickstart. Behold manages the
+ * Instagram credential and provides CORS-enabled, durable image URLs.
+ *
+ * An environment value can replace this if the club moves to a new feed.
+ */
+export const DEFAULT_FEED_URL = "https://feeds.behold.so/8lbzhK7erLeUCWeO27d8";
+export const FEED_URL = import.meta.env.VITE_INSTAGRAM_FEED_URL || DEFAULT_FEED_URL;
 
 export type InstaPost = {
   id: string;

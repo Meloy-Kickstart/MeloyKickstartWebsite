@@ -2,11 +2,10 @@ import { useEffect, useState } from "react";
 
 const SECTIONS = [
   { id: "home", label: "Home" },
-  { id: "events", label: "Events" },
-  { id: "offerings", label: "What We Offer" },
-  { id: "join", label: "Join" },
-  { id: "partner", label: "Partner" },
+  { id: "events", label: "Upcoming" },
 ];
+const DISCORD = import.meta.env.VITE_DISCORD_INVITE || "https://discord.gg/jK5uQRXfSE";
+const LUMA = "https://luma.com/user/usr-GjilPA3HrL19yKV";
 
 export const Navbar = () => {
   const [active, setActive] = useState("home");
@@ -88,8 +87,13 @@ export const Navbar = () => {
             </li>
           ))}
           <li>
-            <a href="#join" className="btn-primary px-5 py-2.5 text-xs">
-              Join
+            <a href={DISCORD} target="_blank" rel="noreferrer" className="btn-secondary px-4 py-2 text-xs">
+              Join Discord
+            </a>
+          </li>
+          <li>
+            <a href={LUMA} target="_blank" rel="noreferrer" className="btn-primary px-4 py-2 text-xs">
+              Join Luma
             </a>
           </li>
         </ul>
@@ -138,13 +142,12 @@ export const Navbar = () => {
                 </a>
               </li>
             ))}
-            <li className="py-4">
-              <a
-                href="#join"
-                onClick={() => setOpen(false)}
-                className="btn-primary w-full"
-              >
-                Join the Club
+            <li className="grid gap-3 py-4">
+              <a href={DISCORD} target="_blank" rel="noreferrer" className="btn-secondary w-full">
+                Join Discord
+              </a>
+              <a href={LUMA} target="_blank" rel="noreferrer" className="btn-primary w-full">
+                Join Luma
               </a>
             </li>
           </ul>

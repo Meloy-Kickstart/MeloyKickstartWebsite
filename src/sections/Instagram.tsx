@@ -11,6 +11,8 @@ import {
 } from "../lib/instagram";
 import snapshot from "../data/instagram-posts.json";
 
+const LUMA = "https://luma.com/user/usr-GjilPA3HrL19yKV";
+
 // Build-time snapshot for first paint; the live feed replaces it on load
 const initial = parseFeed(snapshot);
 
@@ -82,17 +84,15 @@ export const Instagram = () => {
   if (posts.length === 0) return null;
 
   return (
-    <section id="instagram" className="section bg-rose-50">
+    <section id="events" className="event-surface section">
       <div className="wrap">
         <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <div className="max-w-2xl">
-            <Reveal as="p" className="eyebrow">
-              Instagram
-            </Reveal>
             <SplitLines
-              lines={["Latest posts"]}
-              className="display text-display-lg mt-4"
+              lines={["Upcoming", "Events"]}
+              className="display text-display-lg"
             />
+
           </div>
           <Reveal delay={0.2} className="self-start md:self-auto">
             <a
@@ -101,7 +101,15 @@ export const Instagram = () => {
               rel="noreferrer"
               className="btn-secondary"
             >
-              <FaInstagram className="text-lg" />@{INSTAGRAM_HANDLE}
+              <FaInstagram className="text-lg" />Follow on Instagram
+            </a>
+            <a
+              href={LUMA}
+              target="_blank"
+              rel="noreferrer"
+              className="btn-primary mt-3"
+            >
+              Register on Luma
             </a>
           </Reveal>
         </div>
