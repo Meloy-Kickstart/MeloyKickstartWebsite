@@ -34,7 +34,7 @@ npm run preview
 
 ## Customize
 - Replace placeholder social links in `Footer.tsx`
-- Events come from Luma. `npm run luma` refreshes `src/data/luma-events.json`; `npm run build` runs it too. `.github/workflows/luma-sync.yml` runs it every 6 hours and commits changes to `main`, which triggers a Vercel deploy. Run it by hand from the Actions tab to publish a new event now.
+- Events come from Luma. `npm run luma` refreshes `src/data/luma-events.json`; `npm run build` runs it too. `.github/workflows/luma-sync.yml` runs it every 2 hours and commits changes to `main`, which triggers a Vercel deploy. Run it by hand from the Actions tab to publish a new event now.
 - Instagram posts come from Behold (see below)
 
 ## Accessibility & Motion
