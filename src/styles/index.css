@@ -37,11 +37,6 @@ body {
   }
   /* A quiet, poster-like backdrop gives the opening section a little more
      depth without competing with the headline or calls to action. */
-  .hero-surface::before {
-    content: "";
-    @apply pointer-events-none absolute -right-16 top-16 h-56 w-56 rounded-full border border-maroon/15 sm:-right-12 sm:h-80 sm:w-80;
-    box-shadow: inset 0 0 0 1.25rem rgb(241 221 225 / 0.6);
-  }
   .hero-surface::after {
     content: "";
     @apply pointer-events-none absolute bottom-12 left-[4%] hidden h-24 w-32 opacity-60 sm:block;
