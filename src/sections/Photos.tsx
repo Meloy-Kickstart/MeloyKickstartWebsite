@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { useReducedMotion } from "framer-motion";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
-import { Reveal } from "../components/motion";
+import { Reveal, SplitLines } from "../components/motion";
 import { photos, type Photo } from "../data/photos";
 
 /**
@@ -98,9 +98,10 @@ export const Photos = () => {
       onTouchEnd={() => setPaused(false)}
     >
       <div className="wrap flex items-end justify-between gap-6">
-        <Reveal as="p" className="eyebrow">
-          From our events
-        </Reveal>
+        <SplitLines
+          lines={["Snapshots from past events"]}
+          className="display text-display-md"
+        />
         <Reveal className="flex gap-2">
           <button type="button" onClick={() => nudge(-1)} aria-label="Previous photos" className={arrow}>
             <FaArrowLeft />

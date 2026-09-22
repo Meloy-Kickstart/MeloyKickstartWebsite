@@ -71,12 +71,9 @@ export const About = () => {
       />
       <div className="wrap">
         <div className="max-w-3xl">
-          <Reveal as="p" className="eyebrow">
-            What you&rsquo;ll get
-          </Reveal>
           <SplitLines
             lines={["Build.", "Connect.", "Kickstart."]}
-            className="display text-display-lg mt-4"
+            className="display text-display-lg"
           />
         </div>
 

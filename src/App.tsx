@@ -14,11 +14,11 @@ export default function App() {
       <Navbar />
       <main>
         <Hero />
+        <Events />
         <Photos />
         <Instagram />
         <About />
         <Join />
-        <Events />
         <CareerFair />
       </main>
       <Footer />

@@ -25,6 +25,12 @@ describe("formatEventDate", () => {
   it("formats in the event's own timezone", () => {
     // 23:00Z on Sep 10 is 6:00 PM in College Station
     const d = formatEventDate("2026-09-10T23:00:00.000Z", "America/Chicago");
-    expect(d).toEqual({ day: "10", month: "Sep", year: "2026", time: "6:00 PM" });
+    expect(d).toEqual({
+      weekday: "Thursday",
+      day: "10",
+      month: "Sep",
+      year: "2026",
+      time: "6:00 PM",
+    });
   });
 });

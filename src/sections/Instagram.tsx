@@ -87,10 +87,10 @@ export const Instagram = () => {
         <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <div className="max-w-2xl">
             <Reveal as="p" className="eyebrow">
-              On Instagram
+              Instagram
             </Reveal>
             <SplitLines
-              lines={["Real people.", "Real events."]}
+              lines={["Latest posts"]}
               className="display text-display-lg mt-4"
             />
           </div>

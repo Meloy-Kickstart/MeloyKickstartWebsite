@@ -2,9 +2,9 @@ import { useEffect, useState } from "react";
 
 const SECTIONS = [
   { id: "home", label: "Home" },
+  { id: "events", label: "Events" },
   { id: "offerings", label: "What We Offer" },
   { id: "join", label: "Join" },
-  { id: "events", label: "Events" },
   { id: "partner", label: "Partner" },
 ];
 

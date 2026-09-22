@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { useRef } from "react";
+import { FaArrowRight } from "react-icons/fa";
 import { Shapes } from "../components/Shapes";
 import { Reveal, SplitLines } from "../components/motion";
 import raw from "../data/luma-events.json";
@@ -9,6 +10,59 @@ const data = raw as { upcoming: LumaEvent[]; past: LumaEvent[] };
 
 const LUMA_PROFILE = "https://luma.com/user/usr-GjilPA3HrL19yKV";
 const EASE = [0.22, 1, 0.36, 1] as const;
+
+/** The next event, full width. The whole block is the RSVP link. */
+const FeaturedEvent = ({ e }: { e: LumaEvent }) => {
+  const { weekday, day, month, time } = formatEventDate(e.startAt, e.timezone);
+  return (
+    <motion.a
+      href={e.url}
+      target="_blank"
+      rel="noreferrer"
+      initial={{ opacity: 0, y: 32 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      whileHover={{ y: -4 }}
+      viewport={{ once: true, margin: "-40px" }}
+      transition={{ duration: 0.7, ease: EASE }}
+      className="group relative block overflow-hidden rounded-3xl bg-maroon text-cream shadow-lift transition-colors hover:bg-maroon-600"
+    >
+      {e.cover && (
+        <img
+          src={e.cover}
+          alt=""
+          loading="lazy"
+          decoding="async"
+          className="absolute inset-0 h-full w-full object-cover opacity-25 transition-transform duration-700 group-hover:scale-105"
+        />
+      )}
+      <div className="relative grid gap-8 p-7 sm:p-10 lg:grid-cols-[auto_1fr_auto] lg:items-center lg:gap-12 lg:p-14">
+        {/* Date */}
+        <div className="display leading-none text-cream">
+          <span className="block text-[5rem] sm:text-[6.5rem] lg:text-[8rem]">{day}</span>
+          <span className="mt-1 block text-base tracking-wider sm:text-lg">
+            {weekday}, {month}
+          </span>
+        </div>
+
+        {/* Title + details */}
+        <div className="min-w-0">
+          <p className="eyebrow text-rose-200">Next event</p>
+          <h3 className="display mt-3 text-display-md text-cream">{eventTitle(e.name)}</h3>
+          <p className="mt-5 text-base font-medium text-cream/85 sm:text-lg">
+            {time}
+            {e.location ? ` at ${e.location}` : ""}
+          </p>
+        </div>
+
+        {/* CTA */}
+        <span className="btn bg-cream text-maroon transition-transform group-hover:translate-x-1 lg:self-center">
+          RSVP on Luma
+          <FaArrowRight className="text-xs" aria-hidden />
+        </span>
+      </div>
+    </motion.a>
+  );
+};
 
 const EventCard = ({ e, idx, past }: { e: LumaEvent; idx: number; past?: boolean }) => {
   const { day, month, year, time } = formatEventDate(e.startAt, e.timezone);
@@ -58,7 +112,7 @@ const EventCard = ({ e, idx, past }: { e: LumaEvent; idx: number; past?: boolean
         </h3>
         <p className="mt-auto pt-3 text-xs uppercase tracking-wider text-ink/60">
           {time}
-          {e.location ? ` · ${e.location}` : ""}
+          {e.location ? ` at ${e.location}` : ""}
         </p>
       </div>
     </motion.a>
@@ -66,7 +120,7 @@ const EventCard = ({ e, idx, past }: { e: LumaEvent; idx: number; past?: boolean
 };
 
 export const Events = () => {
-  const upcoming = data.upcoming;
+  const [next, ...more] = data.upcoming;
   const past = data.past.slice(0, 4);
   const ref = useRef<HTMLElement>(null);
 
@@ -81,19 +135,14 @@ export const Events = () => {
         ]}
       />
       <div className="wrap">
-        <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
-          <div className="max-w-2xl">
-            <Reveal as="p" className="eyebrow">
-              Events
-            </Reveal>
-            <SplitLines
-              lines={["Every other", "week"]}
-              className="display text-display-lg mt-4"
-            />
-            <Reveal as="p" delay={0.2} className="lede mt-6">
-              Workshops, speakers, demo nights. RSVP on Luma.
-            </Reveal>
-          </div>
+        <SplitLines
+          lines={["Events every other Thursday"]}
+          className="display text-display-lg"
+        />
+        <div className="mt-6 flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+          <Reveal as="p" delay={0.2} className="lede">
+            Workshops, speakers, demo nights. RSVP on Luma.
+          </Reveal>
           <Reveal delay={0.3} className="self-start md:self-auto">
             <a
               href={LUMA_PROFILE}
@@ -106,33 +155,44 @@ export const Events = () => {
           </Reveal>
         </div>
 
-        {/* Upcoming */}
-        <Reveal as="p" className="eyebrow mt-12 sm:mt-16">
-          Upcoming
-        </Reveal>
-        {upcoming.length > 0 ? (
-          <div className="mt-5 grid gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
-            {upcoming.map((e, i) => (
-              <EventCard key={e.id} e={e} idx={i} />
-            ))}
-          </div>
-        ) : (
-          <Reveal
-            delay={0.1}
-            className="mt-5 flex flex-col items-start justify-between gap-4 rounded-2xl border-2 border-dashed border-maroon/30 p-6 sm:flex-row sm:items-center sm:p-8"
-          >
-            <p className="text-ink/75">
-              Next event is not posted yet. Follow us on Luma to hear first.
-            </p>
-            <a
-              href={LUMA_PROFILE}
-              target="_blank"
-              rel="noreferrer"
-              className="btn-primary shrink-0"
+        {/* Next event */}
+        <div className="mt-10 sm:mt-14">
+          {next ? (
+            <FeaturedEvent e={next} />
+          ) : (
+            <Reveal
+              delay={0.1}
+              className="flex flex-col items-start justify-between gap-4 rounded-3xl bg-maroon p-7 text-cream sm:flex-row sm:items-center sm:p-10"
             >
-              Follow
-            </a>
-          </Reveal>
+              <div>
+                <p className="eyebrow text-rose-200">Next event</p>
+                <p className="display mt-3 text-display-md text-cream">Not posted yet</p>
+                <p className="mt-4 text-cream/85">Follow us on Luma to hear first.</p>
+              </div>
+              <a
+                href={LUMA_PROFILE}
+                target="_blank"
+                rel="noreferrer"
+                className="btn shrink-0 bg-cream text-maroon hover:-translate-y-0.5"
+              >
+                Follow on Luma
+              </a>
+            </Reveal>
+          )}
+        </div>
+
+        {/* More upcoming */}
+        {more.length > 0 && (
+          <>
+            <Reveal as="p" className="eyebrow mt-12 sm:mt-16">
+              Also coming up
+            </Reveal>
+            <div className="mt-5 grid gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
+              {more.map((e, i) => (
+                <EventCard key={e.id} e={e} idx={i} />
+              ))}
+            </div>
+          </>
         )}
 
         {/* Past */}
