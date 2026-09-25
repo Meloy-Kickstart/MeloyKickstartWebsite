@@ -1,5 +1,6 @@
 {
-  "upcoming": [
+  "upcoming": [],
+  "past": [
     {
       "id": "evt-I6OJZsHd4g8A8lf",
       "name": "Meloy Kickstart Meeting #2: Problem Discovery Workshop",
@@ -8,9 +9,7 @@
       "timezone": "America/Chicago",
       "cover": null,
       "location": "ZACH 415"
-    }
-  ],
-  "past": [
+    },
     {
       "id": "evt-4GbDeZq5j1d9tVl",
       "name": "Meloy Kickstart Meeting #1 : Absurd Elevator Pitch Workshop",
