@@ -1,5 +1,15 @@
 {
-  "upcoming": [],
+  "upcoming": [
+    {
+      "id": "evt-Pif7jMmiAptLplA",
+      "name": "Meloy Kickstart Meeting #3: COFOUNDER MATCHING",
+      "url": "https://luma.com/prqa213a",
+      "startAt": "2026-10-08T23:00:00.000Z",
+      "timezone": "America/Chicago",
+      "cover": null,
+      "location": "ZACH 415"
+    }
+  ],
   "past": [
     {
       "id": "evt-I6OJZsHd4g8A8lf",
