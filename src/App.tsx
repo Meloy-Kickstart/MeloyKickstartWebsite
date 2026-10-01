@@ -13,6 +13,7 @@ export default function App() {
       <Navbar />
       <main>
         <Hero />
+        <Events />
         <Instagram />
         <Photos />
         {/* <Join /> */}

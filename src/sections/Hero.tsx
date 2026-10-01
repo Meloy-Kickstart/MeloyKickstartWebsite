@@ -43,27 +43,21 @@ export const Hero = () => {
                 aria-label="Ways to get involved"
               >
                 <p className="text-2xl font-extrabold tracking-tight text-maroon">
-                  200+ <span className="text-sm font-medium uppercase tracking-wider">members and counting</span>
+                  Get in the loop.
                 </p>
-                <p className="mt-5 text-sm leading-relaxed text-ink/75">
-                  Whether you&rsquo;re actively building a product or learning how the startup ecosystem
-                  works, connect with the community and register for the semester&rsquo;s events.
-                </p>
-                <div className="mt-7 grid gap-3">
-                  <a href={DISCORD} target="_blank" rel="noreferrer" className="group rounded-xl border-2 border-maroon bg-cream p-4 transition hover:-translate-y-0.5 hover:shadow-lift">
-                    <span className="block text-sm font-bold text-maroon">Join Discord</span>
-                    <span className="mt-1 block text-sm text-ink/70">Community, reminders, and resources.</span>
+                <div className="mt-6 grid gap-3">
+                  <a href={DISCORD} target="_blank" rel="noreferrer" className="btn-secondary">
+                    Join Discord
                   </a>
-                  <a href={LUMA} target="_blank" rel="noreferrer" className="group rounded-xl bg-maroon p-4 text-cream transition hover:-translate-y-0.5 hover:shadow-lift">
-                    <span className="block text-sm font-bold">Join Luma</span>
-                    <span className="mt-1 block text-sm text-cream/75">Event details and registration.</span>
+                  <a href={LUMA} target="_blank" rel="noreferrer" className="btn-primary">
+                    Join Luma
                   </a>
                 </div>
               </motion.aside>
             </div>
 
             <motion.div {...fade(0)} className="border-y border-maroon/20 py-4 lg:col-span-2">
-              <ul className="grid gap-x-6 gap-y-1 text-sm font-semibold text-maroon sm:grid-cols-2 lg:grid-cols-4">
+              <ul className="grid gap-x-6 gap-y-1 text-sm font-semibold text-maroon sm:grid-cols-2 lg:flex lg:justify-between">
                 <li>Startup workshops</li>
                 <li>Campus resources</li>
                 <li>Co-founders</li>

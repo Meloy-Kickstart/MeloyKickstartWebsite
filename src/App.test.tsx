@@ -20,13 +20,13 @@ describe("landing page", () => {
   });
 
   it("puts Discord and Luma joins in the hero", () => {
-    expect(screen.getAllByRole("link", { name: "Join Discord" })).toHaveLength(1);
-    expect(screen.getAllByRole("link", { name: "Join Luma" })).toHaveLength(1);
+    const hero = screen.getByRole("complementary", { name: "Ways to get involved" });
+    expect(within(hero).getByRole("link", { name: "Join Discord" })).toBeInTheDocument();
+    expect(within(hero).getByRole("link", { name: "Join Luma" })).toBeInTheDocument();
   });
 
   it("shows the organization description in the hero", () => {
-    expect(screen.getByText("200+")).toBeInTheDocument();
-    expect(screen.getByText("members and counting")).toBeInTheDocument();
+    expect(screen.getByText("Get in the loop.")).toBeInTheDocument();
     expect(screen.getByText(/connects engineers with the people, resources/i)).toBeInTheDocument();
   });
 

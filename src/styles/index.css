@@ -27,22 +27,6 @@ body {
   /* Subtle section surfaces keep the page from reading as one flat canvas. */
   .hero-surface {
     @apply relative isolate overflow-hidden;
-    background: linear-gradient(
-      180deg,
-      #faf6f0 0%,
-      #faf6f0 42%,
-      #fff4f6 82%,
-      #fcedf0 100%
-    );
-  }
-  /* A quiet, poster-like backdrop gives the opening section a little more
-     depth without competing with the headline or calls to action. */
-  .hero-surface::after {
-    content: "";
-    @apply pointer-events-none absolute bottom-12 left-[4%] hidden h-24 w-32 opacity-60 sm:block;
-    background-image: radial-gradient(rgb(92 15 31 / 0.35) 1.25px, transparent 1.25px);
-    background-size: 12px 12px;
-    mask-image: linear-gradient(90deg, transparent, black 24%, black 76%, transparent);
   }
   .hero-surface > .wrap,
   .event-surface > .wrap {
@@ -51,10 +35,6 @@ body {
   .event-surface {
     @apply relative isolate overflow-hidden;
     background: linear-gradient(135deg, #fff4f6 0%, #fcedf0 52%, #fff8f2 100%);
-  }
-  .event-surface::before {
-    content: "";
-    @apply pointer-events-none absolute -left-24 top-20 h-64 w-64 rounded-full border border-maroon/10 sm:h-96 sm:w-96;
   }
   .event-surface::after {
     content: "";
@@ -86,7 +66,7 @@ body {
 
   /* Buttons */
   .btn {
-    @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold uppercase tracking-wider transition-all duration-300 ease-out active:scale-95;
+    @apply inline-flex items-center justify-center gap-2 rounded-full border-2 border-transparent px-6 py-3 text-sm font-semibold uppercase tracking-wider transition-all duration-300 ease-out active:scale-95;
     @apply focus:outline-none focus-visible:ring-2 focus-visible:ring-maroon focus-visible:ring-offset-2 focus-visible:ring-offset-cream;
   }
   .btn-primary {
