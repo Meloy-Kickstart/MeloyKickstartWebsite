@@ -1,5 +1,6 @@
 {
-  "upcoming": [
+  "upcoming": [],
+  "past": [
     {
       "id": "evt-Pif7jMmiAptLplA",
       "name": "Meloy Kickstart Meeting #3: COFOUNDER MATCHING",
@@ -8,9 +9,7 @@
       "timezone": "America/Chicago",
       "cover": null,
       "location": "ZACH 415"
-    }
-  ],
-  "past": [
+    },
     {
       "id": "evt-I6OJZsHd4g8A8lf",
       "name": "Meloy Kickstart Meeting #2: Problem Discovery Workshop",
