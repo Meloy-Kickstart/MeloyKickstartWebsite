@@ -1,5 +1,15 @@
 {
-  "upcoming": [],
+  "upcoming": [
+    {
+      "id": "evt-Yrjn4DSCqN3egLH",
+      "name": "Meloy Kickstart Meeting #4: BUILDING WITH AI",
+      "url": "https://luma.com/7u23wu7d",
+      "startAt": "2026-10-22T23:00:00.000Z",
+      "timezone": "America/Chicago",
+      "cover": null,
+      "location": "ZACH 415"
+    }
+  ],
   "past": [
     {
       "id": "evt-Pif7jMmiAptLplA",
