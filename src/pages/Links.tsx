@@ -5,8 +5,10 @@ import type { IconType } from "react-icons";
 const DISCORD = import.meta.env.VITE_DISCORD_INVITE || "https://discord.gg/jK5uQRXfSE";
 const LUMA = "https://luma.com/user/usr-GjilPA3HrL19yKV";
 
-// Linktree-style hub. The retractable banner's single QR code points here
-// (meloykickstart.tech/links), so change links in this list, not on the banner.
+// Linktree-style hub. The retractable banner's QR code points to
+// tx.ag/MeloyKickstart (an A&M short link), which should redirect here
+// (https://meloykickstart.com/links).
+// Change links in this list, or the tx.ag target, never the banner.
 const links: { label: string; href: string; icon: IconType; primary?: boolean }[] = [
   { label: "Join the Discord", href: DISCORD, icon: FaDiscord, primary: true },
   { label: "RSVP to events", href: LUMA, icon: FaCalendarDays, primary: true },
