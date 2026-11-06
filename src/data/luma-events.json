@@ -1,6 +1,17 @@
 {
   "upcoming": [
     {
+      "id": "evt-xYIHdCMe1qVlKLm",
+      "name": "Meloy Kickstart Meeting #6: HOLIDAY SOCIAL",
+      "url": "https://luma.com/1c8x6ttw",
+      "startAt": "2026-11-13T00:00:00.000Z",
+      "timezone": "America/Chicago",
+      "cover": null,
+      "location": "ZACH 415"
+    }
+  ],
+  "past": [
+    {
       "id": "evt-qmwwoC2ryAkJ0LZ",
       "name": "Meloy Kickstart Meeting #5: TYLER WOOTEN",
       "url": "https://luma.com/x241e0ef",
@@ -8,9 +19,7 @@
       "timezone": "America/Chicago",
       "cover": null,
       "location": "ZACH 415"
-    }
-  ],
-  "past": [
+    },
     {
       "id": "evt-Yrjn4DSCqN3egLH",
       "name": "Meloy Kickstart Meeting #4: BUILDING WITH AI",
